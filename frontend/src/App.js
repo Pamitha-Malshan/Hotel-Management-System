@@ -1,11 +1,42 @@
 
+import {BrowserRouter,Route } from "react-router-dom";
+
+import Sidebar from'./Component/Sidebar'
+
+
+
 function App() {
   return (
-    <div >
-      <center>
-        <h1>Welcome to Hotel Management System</h1>
-      </center>
+    <BrowserRouter>
+    <div className='row'>
+    
+
+      {/*Pamitha */}
+      <div className='col-md-2'>
+      <Sidebar/>
+      </div>
+
+
+
+
+      {/*Ayeshi */}
+
+
+
+
+
+
+      {/*Akeel */}
+
+
+
+
+
+
+      {/*Lankani */}
+     
     </div>
+    </BrowserRouter>
   );
 }
 
