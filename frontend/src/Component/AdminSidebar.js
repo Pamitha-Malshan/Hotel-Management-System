@@ -21,11 +21,11 @@ function sidebar() {
                 <span class="material-icons-sharp">grid_view</span>
                 <h3>Dashboard</h3>
             </a>
-            <a href="#" className='link'>
+            <a href="/Employeeregister" className='link'>
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Customers</h3>
             </a>
-            <a href="#" className='link'>
+            <a href="/Employeeattendance" className='link'>
                 <span class="material-icons-sharp">bed</span>
                 <h3>Rooms</h3>
             </a>

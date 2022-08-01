@@ -1,0 +1,40 @@
+.hotelname{
+  margin: 20px;
+  color: rgb(13, 242, 13);
+  font-size: 40px;
+}
+
+.hotelname:hover{
+  color:pink;
+}
+
+.item {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.item span {
+  align-items: center;
+  background: rgb(79, 245, 76);
+  border-radius: 100%;
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.item span:hover {
+    align-items: center;
+    background: rgb(13, 141, 11);
+    border-radius: 100%;
+    padding: 10px;
+    margin-right: 8px;
+  }
+
+.item span {
+  color: aliceblue;
+}
+
+.item .content h2{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}

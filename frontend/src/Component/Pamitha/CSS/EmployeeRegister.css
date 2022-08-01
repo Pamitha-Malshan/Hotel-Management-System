@@ -1,0 +1,25 @@
+body{
+    background: #f6f6f9;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+
+h1:hover{
+    font-size: 36px;
+    transition: all 500ms ease;
+}
+
+form{
+    border-radius: 40px;
+    box-shadow: 0 2rem 3rem  rgba(44, 44, 50, 0.18);
+    background: white;
+    padding: 20px;
+    margin: 30px;
+}
+
+form:hover{
+    box-shadow: none;
+}

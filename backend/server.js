@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 
-
+const EmployeeRegisterRoutes = require('./Routes/EmployeeRegister');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 //app.use(multer());
 
-
+app.use(EmployeeRegisterRoutes);
 
 
 const PORT = 8001;
