@@ -21,11 +21,15 @@ function sidebar() {
                 <span class="material-icons-sharp">grid_view</span>
                 <h3>Dashboard</h3>
             </a>
+            <a href="/Employeeattendanceview" className='link'>
+                <span class="material-icons-sharp">group</span>
+                <h3>Employee</h3>
+            </a>
             <a href="/Employeeregister" className='link'>
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Customers</h3>
             </a>
-            <a href="/Employeeattendance" className='link'>
+            <a href="" className='link'>
                 <span class="material-icons-sharp">bed</span>
                 <h3>Rooms</h3>
             </a>
@@ -46,7 +50,7 @@ function sidebar() {
                 <span class="material-icons-sharp">inventory</span>
                 <h3>Products</h3>
             </a>
-            <a href="#">
+            <a href="/EmployeeReport">
                 <span class="material-icons-sharp">report_gmailerrorred</span>
                 <h3>Reports</h3>
             </a>
@@ -58,7 +62,7 @@ function sidebar() {
                 <span class="material-icons-sharp">add</span>
                 <h3>Add Product</h3>
             </a>
-            <a href="#">
+            <a href="/hotelgreen">
                 <span class="material-icons-sharp">logout</span>
                 <h3>Logout</h3>
             </a>

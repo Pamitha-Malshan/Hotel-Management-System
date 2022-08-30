@@ -1,12 +1,10 @@
-import "../Pamitha/CSS/EmployeeRegister.css";
-import employeepic from "./image/employee.jpg";
-
-import React, { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import SendIcon from "@mui/icons-material/Send";
+import { useParams } from "react-router-dom";
+
 import {
   Button,
   Radio,
@@ -26,23 +24,45 @@ const schema = yup
   })
   .required();
 
-export default function FormPropsTextFields() {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
 
-  const [name, setname] = useState("");
+  export default function EditMark() {
+
+    const { id } = useParams();
+  console.log(id);
+
+    const {
+      register,
+      formState: { errors },
+      handleSubmit,
+    } = useForm({
+      resolver: yupResolver(schema),
+    });
+  
+    const [student, setStudent] = useState([]);
+    const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [IDNO, setIDNO] = useState("");
   const [age, setage] = useState("");
   const [gender, setgender] = useState("");
   const [role, setrole] = useState("");
 
+
+  useEffect(() => {
+    axios.get(`http://localhost:8001/get/${id}`).then((response) => {
+      setStudent(response.data.existingStudent);
+
+      setname(response.data.existingEmployee.name);
+      setemail(response.data.existingEmployee.email);
+      setIDNO(response.data.existingEmployee.IDNO);
+      setage(response.data.existingEmployee.age);
+      setgender(response.data.existingEmployee.gender);
+      setrole(response.data.existingEmployee.role);
+    });
+  }, []);
+
   const passData = (data) => {
+
+    // e.preventDefault();
     const emp = {
       name,
       email,
@@ -55,37 +75,39 @@ export default function FormPropsTextFields() {
     console.log(data);
 
     axios
-      .post("http://localhost:8001/save", data)
+      .put(`http://localhost:8001/update/${id}`, data)
       .then(() => {
-        alert("Add New Employee");
+        alert("Update Employee");
 
-        setname(" ");
+        window.location = '/EmployeeView';
       })
       .catch((err) => {
         alert(err);
       });
   };
 
-  return (
-    <div className="row">
-      <div className="col-md-8">
+    return (
+      <div>
+        <br />
         <center>
           <form onSubmit={handleSubmit(passData)}>
             <h1>Employee registration</h1>
             <br />
 
             <TextField
+              label="Enter employer email"
+              type="text"
               id="name"
-              label="Enter Employee Name"
-              variant="outlined"
-              fullWidth
+              name="name"
               style={{ width: "60%" }}
+              value={name}
               onChange={(e) => {
                 setname(e.target.value);
               }}
-              {...register("name", { required: true })}
+              
             />
-           
+           <br/>
+           <br/>
 
             <p style={{ color: "red" }}>{errors.name?.message}</p>
           
@@ -93,42 +115,48 @@ export default function FormPropsTextFields() {
               label="Enter employer email"
               type="email"
               id="email"
+              name="email"
               style={{ width: "60%" }}
+              value={email}
               onChange={(e) => {
                 setemail(e.target.value);
               }}
-              {...register("email", { required: true })}
-            />
             
-            <p style={{ color: "red" }}>{errors.email?.message}</p>
+            />
+             <br/>
+             <br/>
+            {/* <p style={{ color: "red" }}>{errors.email?.message}</p> */}
           
             <TextField
               label="Enter employer national ID number"
               type="text"
               id="IDNO"
               style={{ width: "60%" }}
+              value={IDNO}
               onChange={(e) => {
                 setIDNO(e.target.value);
               }}
-              {...register("IDNO", { required: true })}
+             
             />
-         
+          <br/>
+          <br/>
 
-            <p style={{ color: "red" }}>{errors.IDNO?.message}</p>
+            {/* <p style={{ color: "red" }}>{errors.IDNO?.message}</p> */}
             
             <TextField
               label="Enter employer age"
               type="number"
               id="age"
               style={{ width: "60%" }}
+              value={age}
               onChange={(e) => {
                 setage(e.target.value);
               }}
-              {...register("age", { required: true })}
+          
             />
-           
+            <br/>
 
-            <p style={{ color: "red" }}>{errors.age?.message}</p>
+            {/* <p style={{ color: "red" }}>{errors.age?.message}</p> */}
            
 
             <RadioGroup
@@ -136,17 +164,20 @@ export default function FormPropsTextFields() {
               defaultValue="female"
               name="radio-buttons-group"
               className="redio"
+              value={gender}
+              style={{marginLeft:"90px"}}
             >
               <FormControlLabel
                 value="female"
                 control={<Radio />}
                 label="Female"
+
                 onChange={(e) => {
                   setgender(e.target.value);
                 }}
-                {...register("gender", { required: true })}
+             
               />
-
+             
               <FormControlLabel
                 value="male"
                 control={<Radio />}
@@ -154,9 +185,10 @@ export default function FormPropsTextFields() {
                 onChange={(e) => {
                   setgender(e.target.value);
                 }}
-                {...register("gender", { required: true })}
+               
               />
             </RadioGroup>
+            <br/>
 
           
             <TextField
@@ -164,14 +196,15 @@ export default function FormPropsTextFields() {
               type="text"
               id="role"
               style={{ width: "60%" }}
+              value={role}
               onChange={(e) => {
                 setrole(e.target.value);
               }}
-              {...register("role", { required: true })}
+             
             />
-            
+             <br/>
          
-            <p style={{ color: "red" }}>{errors.role?.message}</p>
+            {/* <p style={{ color: "red" }}>{errors.role?.message}</p> */}
           
             <br />
             <Button type="submit" variant="contained">
@@ -179,25 +212,8 @@ export default function FormPropsTextFields() {
             </Button>
           </form>
         </center>
+        <br />
       </div>
-      <div className="col-md-4">
-        <center>
-          <div className="empdes">
-            <img src={employeepic} className="employeeimg" />
+    );
+  }
 
-            <h3>
-              We are looking high quality customer service and very friendly
-              customer service from you.
-            </h3>
-            <br />
-            <span class="material-icons-sharp">star_half</span>
-            <span class="material-icons-sharp">star_half</span>
-            <span class="material-icons-sharp">star_half</span>
-            <span class="material-icons-sharp">star_half</span>
-            <span class="material-icons-sharp">star_half</span>
-          </div>
-        </center>
-      </div>
-    </div>
-  );
-}

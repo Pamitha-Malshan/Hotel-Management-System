@@ -1,0 +1,82 @@
+.background{
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../image/background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    animation: change 20s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%{
+        background-image: url(../image/background2.jpg);
+    }
+    20%{
+        background-image: url(../image/background3.jpg);
+    }
+    40%{
+        background-image: url(../image/background4.jpg);
+    }
+    60%{
+        background-image: url(../image/background5.jpg);
+    }
+    80%{
+        background-image: url(../image/background6.jpg);
+    }
+    100%{
+        background-image: url(../image/background7.jpg);
+    }
+}
+
+  .name{
+       color:white;
+       position: absolute;
+       top: 32%;
+       left: 25%;
+       text-transform: uppercase;
+} 
+
+.name h1{
+    font-size: 70px;
+    text-shadow: 2px 2px #ff0000;
+    font-style: italic;
+}
+.name h1:hover{
+    font-size: 75px;
+}
+
+.name h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.name button{
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+        margin-left: 8px;
+        color: aliceblue;
+        font-weight: 20px;
+        background: none;
+        border: 3px solid rgb(213, 6, 6);
+        font-size: 25px;
+        
+}
+.name button:hover{
+    border: 3px solid rgb(153, 230, 37); 
+}
+
+.star{
+    color:white;
+    position: absolute;
+    top: 20%;
+    left: 42%;
+
+}
+.star span{
+    padding: 10px;
+}
