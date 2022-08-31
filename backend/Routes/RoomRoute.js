@@ -46,6 +46,18 @@ router.post("/room/save", upload.single("file"), (req, res) => {
 //Get All Rooms
 
 router.get("/getrooms", (req, res) => {
+  rooms.find().exec((err, room) => {
+    if (err) {
+      return res.status(400).json({ error: err.message });
+    }
+    return res.status(200).json({
+      success: true,
+      exisistingRooms: room,
+    });
+  });
+});
+
+router.get("/getrooms/available", (req, res) => {
   rooms.find({status: 'Available'}).exec((err, room) => {
     if (err) {
       return res.status(400).json({ error: err.message });
