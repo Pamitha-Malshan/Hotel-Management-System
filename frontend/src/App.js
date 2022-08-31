@@ -15,6 +15,9 @@ import Signin from "./Component/Signin";
 import Validate from "./Component/validation";
 
 
+import AddRoom from "./Component/Lankani/AddRoom";
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -50,7 +53,15 @@ function App() {
                 <Route path="/Employeeupdate/:id"  exact component={EmployeeUpdate}></Route>
                 <Route path="/Employeeattendanceview"  exact component={EmployeeAttendanceView}></Route>
                 <Route path="/Employeereport"  exact component={EmployeeReport}></Route>
-               
+                </div>
+            
+            </div>
+            
+          </div>
+         
+        </div>
+      
+      
 
                 {/*Ayeshi */}
 
@@ -65,21 +76,33 @@ function App() {
 
 
                 {/*Lankani */}
-
+                <div className="row">
+                <div className="col-md-2">
+                  <div className="col order-1">
+                  <Route path="/insertroom"  exact component={Sidebar}></Route>
+                  </div>
+                </div>
+              <div className="col order-2">
+                <div className="row">
+                  <Route path="/insertroom"  exact component={Topbar}></Route>             
+                </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="col order-1">
+                    <Route path="/insertroom" exact component={AddRoom}></Route>
+                    </div>                
+                </div>               
+              </div>
+           
+            </div>
+            </div>
+                
 
 
 
 
                 
-              </div>
-            
-            </div>
-            
-          </div>
-         
-        </div>
-      
-      </div>
+      </div>  
       <div className="row">
       <Route path="/hotelgreen"  exact component={LandingPage}></Route>
 
@@ -91,6 +114,8 @@ function App() {
                 <Route path="/Employeeupdate/:id"  exact component={Footer}></Route>
                 <Route path="/Employeeattendanceview"  exact component={Footer}></Route>
                 <Route path="/Employeereport"  exact component={Footer}></Route>
+                
+                <Route path="/insertroom"  exact component={Footer}></Route>
 
       </div>
       </div>

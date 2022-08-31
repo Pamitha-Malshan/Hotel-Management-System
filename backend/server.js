@@ -7,6 +7,7 @@ const multer = require('multer');
 const EmployeeRegisterRoutes = require('./Routes/EmployeeRegister');
 const EmployeeAttendanceRoutes = require('./Routes/EmployeeAttendance');
 const Register = require('./Routes/Register');
+const RoomRouter = require('./Routes/RoomRoute');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(EmployeeRegisterRoutes);
 app.use(EmployeeAttendanceRoutes);
 app.use(Register);
+app.use(RoomRouter);
 
 
 const PORT = 8001;

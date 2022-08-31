@@ -1,0 +1,119 @@
+#update-form , #reservation-form {
+    width: 200%;
+}
+
+.container-div {
+  width: 70%;
+  padding-left: 20%;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.card-group {
+    width: 90%;
+    height: 90%;
+    margin-left: 7%;
+    margin-top: 1%;
+    margin-bottom: 18%;
+}
+
+.error{
+    color: red;
+}
+
+#search-room {
+    width: 35%;
+    height: 35%;
+}
+
+#p_wrap {
+    white-space: pre-line;
+}
+
+a {
+    color: rgb(87, 124, 191);
+    
+}
+
+p{
+    color: black;
+}
+
+.badge {
+    width: 100px;
+    height: 35px;
+}
+
+.list-group {
+    width: 150%;
+    margin-left: -15%;
+}
+
+#list {
+    margin-bottom: 4%;
+}
+
+h2 {
+    color: black;
+    font-weight: bolder;
+}
+
+#reserve-button {
+    text-align: center;
+    
+}
+
+.main {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .image {
+    height: 400px;
+    width: 750px;
+    font-size: 25px;
+    /* background: lightgreen; */
+    margin: 10px;
+    display: inline-block;
+    line-height: 100px; 
+  }
+
+  .image-container {
+    vertical-align: middle;
+    display: inline-block;
+    width: 60%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .prev, .next {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    height: 10%;
+    margin: 0 auto;
+    cursor: pointer;
+    color: black;
+    transition: 0.6s ease;
+  }
+  .next {
+    margin-left: 5px;
+  }
+  .prev {
+    margin-right: 5px;
+  }
+  .prev:hover, .next:hover {
+    color: white;
+    height: 5%;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .form-outline {
+    margin-left: 40%;
+  }
