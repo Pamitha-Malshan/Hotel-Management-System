@@ -62,7 +62,7 @@ export default function FormPropsTextFields() {
     axios
       .post("http://localhost:8001/Attendancesave", data)
       .then(()=>{
-         alert("Employee Attendance Mark");
+        
         
       setShow(true);
 
@@ -94,8 +94,11 @@ export default function FormPropsTextFields() {
         <br />
         <h3>Current Time is : {ttime}</h3>
         <br />
+        <a href="/Employeeattendanceview">
+        <button className="btn btn-success">Dashboard</button>
+        </a>&nbsp;
         <a href="/hotelgreen">
-        <button className="btn btn-success">Log out</button>
+        <button className="btn btn-warning">Log out</button>
         </a>
         <br />
         <br />

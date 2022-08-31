@@ -62,7 +62,7 @@ html {
 }
 body {
   width: 100vm;
-  height: 100vm;
+  height: 100%;
   font-family: Poppins, sans-serif;
   font-size: 0.88rem;
   
