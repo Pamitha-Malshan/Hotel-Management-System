@@ -16,6 +16,7 @@ import Validate from "./Component/validation";
 
 import AddRoom from "./Component/Lankani/AddRoom";
 import Room from "./Component/Lankani/Room";
+import ManageRooms from "./Component/Lankani/GetRooms";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
               {/*Lankani */}
               <Route path="/insertroom" exact component={Sidebar}></Route>
               <Route path="/room" exact component={Sidebar}></Route>
+              <Route path="/viewroom" exact component={Sidebar}></Route>
             </div>
           </div>
           <div className="col order-2">
@@ -82,6 +84,7 @@ function App() {
               {/*Lankani */}
               <Route path="/insertroom" exact component={Topbar}></Route>
               <Route path="/room" exact component={Topbar}></Route>
+              <Route path="/viewroom" exact component={Topbar}></Route>
             </div>
             <div className="row">
               <div className="col-md-12">
@@ -125,6 +128,7 @@ function App() {
 
                   <Route path="/insertroom" exact component={AddRoom}></Route>
                   <Route path="/room" exact component={Room}></Route>
+                  <Route path="/viewroom" exact component={ManageRooms}></Route>
                 </div>
               </div>
             </div>
@@ -148,6 +152,7 @@ function App() {
 
           <Route path="/insertroom" exact component={Footer}></Route>
           <Route path="/room" exact component={Footer}></Route>
+          <Route path="/viewroom" exact component={Footer}></Route>
         </div>
       </div>
     </BrowserRouter>
