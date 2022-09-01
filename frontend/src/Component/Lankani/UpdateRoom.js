@@ -235,8 +235,8 @@ export default class UpdateRoom extends Component {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary">
-                Submit
+              <button type="submit" className="btn btn-warning"><i className="fas fa-edit"></i>
+                Update
               </button>
             </form>
           </div>

@@ -73,10 +73,10 @@ export default class ManageRooms extends Component {
                             <td>{room.status}</td>
                             <td>
                                 <a href={`/room/update/${room._id}`}>
-                                    <button type="button" className="btn btn-warning">Update</button>
+                                    <button type="button" className="btn btn-warning"><i className="fas fa-edit"></i>Update</button>
                                 </a>
                             </td>
-                            <td><button type="button" className="btn btn-danger" onClick={() => this.onDeleteRoom(room._id)}>Delete</button></td>
+                            <td><button type="button" className="btn btn-danger" onClick={() => this.onDeleteRoom(room._id)}><i className="fas fa-trash-alt"></i>Delete</button></td>
                            </tr>
                         ))}
                     </tbody>
