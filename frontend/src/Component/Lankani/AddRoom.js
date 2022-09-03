@@ -116,7 +116,7 @@ export default function AddRoom() {
         </p>
         <form onSubmit={handleSubmit} encType="multipart/form-data" id="form">
             <div className="mb-3">
-                <label for="roomName" className="form-label">Room Name </label>
+                <label for="roomName" className="form-label">Room Name <span id="star">*</span> </label>
                 <input 
                     type="text" 
                     className="form-control" 
@@ -128,7 +128,7 @@ export default function AddRoom() {
                     required
                 />
                 <br/>
-                <label for="roomFeatures" className="form-label">Room Features </label>
+                <label for="roomFeatures" className="form-label">Room Features <span id="star">*</span> </label>
                 <textarea 
                     class="form-control" 
                     id="roomFeatures" 
@@ -142,7 +142,7 @@ export default function AddRoom() {
                 >               
                 </textarea>
                 <br/>
-                <label for="roomAmount" className="form-label">Room Amount </label>
+                <label for="roomAmount" className="form-label">Room Amount <span id="star">*</span> </label>
                 <input 
                     type="text" 
                     className="form-control" 
@@ -154,7 +154,7 @@ export default function AddRoom() {
                     required
                 />
                 <br/>
-                <label for="roomType" className="form-label">Room Type </label>
+                <label for="roomType" className="form-label">Room Type <span id="star">*</span> </label>
                 <select class="form-select" onChange={(e) => { setRoomType(e.target.value);}} name="roomType">
                     <option selected>Lake View Twin</option>
                     <option value="Standard Double City View">Standard Double City View</option>
@@ -162,7 +162,7 @@ export default function AddRoom() {
                     <option value="Standard Queen View">Standard Queen View</option>
                 </select>
                 <br/>
-                <label for="file" className="form-label">Upload Image </label>
+                <label for="file" className="form-label">Upload Image <span id="star">*</span> </label>
                 <div class="mb-3">
                     <input 
                         class="form-control" 

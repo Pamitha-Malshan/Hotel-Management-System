@@ -9,7 +9,7 @@
 
 .container-update {
   width: 50%;
-  padding-right: 20%;
+  padding-right: 30%;
   text-align: left;
 }
 
@@ -123,4 +123,8 @@ h2 {
 
   .form-outline {
     margin-left: 40%;
+  }
+
+  #star {
+    color: red;
   }

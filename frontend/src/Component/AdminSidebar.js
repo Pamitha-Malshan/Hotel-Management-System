@@ -29,7 +29,7 @@ function sidebar() {
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Customers</h3>
             </a>
-            <a href="" className='link'>
+            <a href="/room" className='link'>
                 <span class="material-icons-sharp">bed</span>
                 <h3>Rooms</h3>
             </a>

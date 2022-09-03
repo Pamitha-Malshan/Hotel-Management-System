@@ -151,7 +151,7 @@ export default class UpdateRoom extends Component {
             >
               <div className="form-group mb-3">
                 <label for="roomName" className="form-label">
-                  Room Name{" "}
+                  Room Name <span id="star">*</span>
                 </label>
                 <input
                   type="text"
@@ -163,7 +163,7 @@ export default class UpdateRoom extends Component {
                 />
                 <br />
                 <label for="roomFeatures" className="form-label">
-                  Room Features{" "}
+                  Room Features <span id="star">*</span>
                 </label>
                 <textarea
                   class="form-control"
@@ -176,7 +176,7 @@ export default class UpdateRoom extends Component {
                 ></textarea>
                 <br />
                 <label for="roomAmount" className="form-label">
-                  Room Amount{" "}
+                  Room Amount <span id="star">*</span>
                 </label>
                 <input
                   type="text"
@@ -188,7 +188,7 @@ export default class UpdateRoom extends Component {
                 />
                 <br />
                 <label for="roomType" className="form-label">
-                  Room Type{" "}
+                  Room Type <span id="star">*</span>
                 </label>
                 <select
                   class="form-select"
@@ -210,7 +210,7 @@ export default class UpdateRoom extends Component {
                 </select>
                 <br />
                 <label for="file" className="form-label">
-                  Upload Image{" "}
+                  Upload Image <span id="star">*</span>
                 </label>
                 <div class="mb-3">
                   <input
@@ -223,7 +223,7 @@ export default class UpdateRoom extends Component {
                   />
                 </div>
                 <label for="status" className="form-label">
-                  Status{" "}
+                  Status <span id="star">*</span>
                 </label>
                 <input
                   type="text"
