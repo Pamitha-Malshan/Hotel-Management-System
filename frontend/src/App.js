@@ -23,6 +23,7 @@ import SearchRoom from "./Component/Lankani/SearchRoom";
 import Payment from "./Component/Lankani/PaymentAdd";
 // import MonthlyIncomReport from "./Component/Lankani/MonthlyReservationIncom";
 import GetIncomeData from "./Component/Lankani/IncomeData";
+import PaymentIncome from "./Component/Lankani/PayIncome";
 
 function App() {
   return (
@@ -147,6 +148,7 @@ function App() {
                   <Route path="/roomreservation" exact component={RoomReservation}></Route>
                   <Route path="/pay/:email" exact component={Payment}></Route>
                   <Route path="/income" exact component={GetIncomeData}></Route>
+                  <Route path="/paymentincome" exact component={PaymentIncome}></Route>
                 </div>
               </div>
             </div>

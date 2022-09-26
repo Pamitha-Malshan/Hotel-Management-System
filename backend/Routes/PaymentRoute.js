@@ -18,4 +18,19 @@ router.post("/payment", (req, res) => {
   });
 });
 
+//Get All Payments
+
+router.get("/getpayment", (req, res) => {
+  payment.find().exec((err, pay) => {
+    if (err) {
+      return res.status(400).json({ error: err.message });
+    }
+    return res.status(200).json({
+      success: true,
+      exisistingPayments: pay,
+    });
+  });
+});
+
+
 module.exports = router;
