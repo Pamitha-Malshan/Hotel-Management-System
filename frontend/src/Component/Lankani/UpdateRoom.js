@@ -3,6 +3,7 @@ import axios from "axios";
 import "./css/style.css";
 import $ from 'jquery';
 import 'jquery-validation';
+import background from './images/add2.jpg';
 
 export default class UpdateRoom extends Component {
   constructor(props) {
@@ -140,10 +141,23 @@ export default class UpdateRoom extends Component {
 
   render() {
     return (
-      <div>
+      <div 
+      style={{
+        backgroundImage: `url(${background})`,
+        height: "830px",
+        width: "1025px",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        marginTop: "20px",
+        marginLeft:'5%',
+            paddingTop:'2%',
+            paddingBottom:'2%',
+            marginBottom:'2%'
+    }}>
+    
         <center>
           <h1>Update Room</h1>
-          <div className="container-update mb-3">
+          <div className="container-update mb-3" >
             <form
               onSubmit={this.onSubmit}
               encType="multipart/form-data"
@@ -235,7 +249,7 @@ export default class UpdateRoom extends Component {
                 />
               </div>
 
-              <button type="submit" className="btn btn-warning"><i className="fas fa-edit"></i>
+              <button type="submit" className="btn btn-warning pay-btn" id="update-button"><i className="fas fa-edit"></i>
                 Update
               </button>
             </form>

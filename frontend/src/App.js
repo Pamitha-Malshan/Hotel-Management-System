@@ -18,6 +18,11 @@ import AddRoom from "./Component/Lankani/AddRoom";
 import Room from "./Component/Lankani/Room";
 import ManageRooms from "./Component/Lankani/GetRooms";
 import UpdateRoom from "./Component/Lankani/UpdateRoom";
+import RoomReservation from "./Component/Lankani/RoomReservation";
+import SearchRoom from "./Component/Lankani/SearchRoom";
+import Payment from "./Component/Lankani/PaymentAdd";
+// import MonthlyIncomReport from "./Component/Lankani/MonthlyReservationIncom";
+import GetIncomeData from "./Component/Lankani/IncomeData";
 
 function App() {
   return (
@@ -57,6 +62,7 @@ function App() {
               <Route path="/room" exact component={Sidebar}></Route>
               <Route path="/viewroom" exact component={Sidebar}></Route>
               <Route path="/room/update/:id" exact component={Sidebar}></Route>
+              <Route path="/income" exact component={Sidebar}></Route>
             </div>
           </div>
           <div className="col order-2">
@@ -88,6 +94,10 @@ function App() {
               <Route path="/room" exact component={Topbar}></Route>
               <Route path="/viewroom" exact component={Topbar}></Route>
               <Route path="/room/update/:id" exact component={Topbar}></Route>
+              <Route path="/roomreservation" exact component={Topbar}></Route>
+              <Route path="/search" exact component={Topbar}></Route>
+              <Route path="/pay/:email" exact component={Topbar}></Route>
+              <Route path="/income" exact component={Topbar}></Route>
             </div>
             <div className="row">
               <div className="col-md-12">
@@ -133,6 +143,10 @@ function App() {
                   <Route path="/room" exact component={Room}></Route>
                   <Route path="/viewroom" exact component={ManageRooms}></Route>
                   <Route path="/room/update/:id" exact component={UpdateRoom}></Route>
+                  <Route path="/search" exact component={SearchRoom}></Route>
+                  <Route path="/roomreservation" exact component={RoomReservation}></Route>
+                  <Route path="/pay/:email" exact component={Payment}></Route>
+                  <Route path="/income" exact component={GetIncomeData}></Route>
                 </div>
               </div>
             </div>
@@ -158,6 +172,10 @@ function App() {
           <Route path="/room" exact component={Footer}></Route>
           <Route path="/viewroom" exact component={Footer}></Route>
           <Route path="/room/update/:id" exact component={Footer}></Route>
+          <Route path="/search" exact component={Footer}></Route>
+          <Route path="/roomreservation" exact component={Footer}></Route>
+          <Route path="/pay/:email" exact component={Footer}></Route>
+          <Route path="/income" exact component={Footer}></Route>
         </div>
       </div>
     </BrowserRouter>

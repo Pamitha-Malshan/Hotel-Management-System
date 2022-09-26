@@ -39,8 +39,7 @@ export default class ManageRooms extends Component {
                 <table className="table table-hover w-auto">
                     <thead>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        
                         <td>Index</td>
                         <td>Room Name</td>
                         <td>Room Features</td>
@@ -56,8 +55,7 @@ export default class ManageRooms extends Component {
                            <tr key={index}>
                            
                             <td></td>
-                            <td></td>
-                            <td></td>
+                            
                             <td>{index + 1}</td>
                             <td>{room.roomName}</td>
                             <td>{room.roomFeatures}</td>
@@ -73,10 +71,10 @@ export default class ManageRooms extends Component {
                             <td>{room.status}</td>
                             <td>
                                 <a href={`/room/update/${room._id}`}>
-                                    <button type="button" className="btn btn-warning"><i className="fas fa-edit"></i>Update</button>
+                                    <button type="button" className="btn btn-warning" id="get-button"><i className="fas fa-edit"></i>&nbsp; Update</button>
                                 </a>
                             </td>
-                            <td><button type="button" className="btn btn-danger" onClick={() => this.onDeleteRoom(room._id)}><i className="fas fa-trash-alt"></i>Delete</button></td>
+                            <td><button type="button" className="btn btn-danger" id="get-button" onClick={() => this.onDeleteRoom(room._id)}><i className="fas fa-trash-alt"></i>&nbsp; Delete</button></td>
                            </tr>
                         ))}
                     </tbody>

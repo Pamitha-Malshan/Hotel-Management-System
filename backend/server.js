@@ -8,6 +8,9 @@ const EmployeeRegisterRoutes = require('./Routes/EmployeeRegister');
 const EmployeeAttendanceRoutes = require('./Routes/EmployeeAttendance');
 const Register = require('./Routes/Register');
 const RoomRouter = require('./Routes/RoomRoute');
+const RoomBooking = require('./Routes/RoomBookingRoutes');
+const PaymentRouter = require('./Routes/PaymentRoute');
+const EmailRouter = require('./Routes/EmailRoute');
 
 const app = express();
 
@@ -22,6 +25,10 @@ app.use(EmployeeRegisterRoutes);
 app.use(EmployeeAttendanceRoutes);
 app.use(Register);
 app.use(RoomRouter);
+app.use(RoomBooking);
+app.use(PaymentRouter);
+app.use(EmailRouter);
+
 
 
 const PORT = 8001;
