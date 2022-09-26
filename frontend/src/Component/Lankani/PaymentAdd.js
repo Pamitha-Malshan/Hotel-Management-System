@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import payBackground from "./images/payback.jpg";
 // import './validator/PaymentValidate';
-import $ from 'jquery';
-import 'jquery-validation';
+import $ from "jquery";
+import "jquery-validation";
 
 export default function Payment(props) {
   const semail = props.match.params.email;
@@ -24,94 +24,90 @@ export default function Payment(props) {
   });
 
   useEffect(() => {
+    //---------call the get booked rooms function
     getBookedRooms(email);
-    const createRoomForm = $('#pay-form');
+
+    //-------------validate the payment form
+    const createRoomForm = $("#pay-form");
 
     createRoomForm.validate({
-        rules: {
-          email: {
-            required: true,
-            email: true
-          },
-          bookingId: {
-            required: true,
-            
-          },
-          fname: {
-            required: true,
-            lettersonly: true
-          },
-          lname: {
-            required: true,
-            lettersonly: true
-          },
-          cardNumber: {
-            required: true,
-            minlength: 16,
-            maxlength: 16,
-            number: true
-          },
-          cardType: {
-            required: true
-          },
-          expire: {
-            required: true
-          },
-          cvv: {
-            required: true,
-            minlength: 3,
-            maxlength: 3,
-            number: true
-
-          },
-          total: {
-            required: true
-          }
-
-
+      rules: {
+        email: {
+          required: true,
+          email: true,
         },
-        message: {
-          email: {
-            required: "Please provide email",
-            email: "Please enter valid email"
-          },
-          fname: {
-            required: 'Please Provide First Name',
-            lettersonly: 'First Name should only contain letters'
-          },
-          lname: {
-            required: 'Please Provide Last Name',
-            lettersonly: 'Last Name should only contain letters'
-          },
-          cardNumber: {
-            required: "Please Provide Card Number",
-            minlength: "Card Number shouldn't be less than 16 numbers",
-            maxlength: "Card Number shouldn't be greater than 16 numbers",
-            number: 'Card Number should only contain numbers'
-          },
-          cardType: {
-            required: "Please Provide Card Type",
-          },
-          expire: {
-            required: "Please Provide Expire Date. eg:- January 2023",
-          },
-          cvv: {
-            required: "Please Provide CVV",
-            minlength: "CVV shouldn't be less than 3 numbers",
-            maxlength: "CVV shouldn't be greater than 3 numbers",
-            number: 'CVV should only contain numbers'
-
-          },
-          total: {
-            required: "Total amount is required",
-          }
-
-        }
-
-      });
-    
+        bookingId: {
+          required: true,
+        },
+        fname: {
+          required: true,
+          lettersonly: true,
+        },
+        lname: {
+          required: true,
+          lettersonly: true,
+        },
+        cardNumber: {
+          required: true,
+          minlength: 16,
+          maxlength: 16,
+          number: true,
+        },
+        cardType: {
+          required: true,
+        },
+        expire: {
+          required: true,
+        },
+        cvv: {
+          required: true,
+          minlength: 3,
+          maxlength: 3,
+          number: true,
+        },
+        total: {
+          required: true,
+        },
+      },
+      message: {
+        email: {
+          required: "Please provide email",
+          email: "Please enter valid email",
+        },
+        fname: {
+          required: "Please Provide First Name",
+          lettersonly: "First Name should only contain letters",
+        },
+        lname: {
+          required: "Please Provide Last Name",
+          lettersonly: "Last Name should only contain letters",
+        },
+        cardNumber: {
+          required: "Please Provide Card Number",
+          minlength: "Card Number shouldn't be less than 16 numbers",
+          maxlength: "Card Number shouldn't be greater than 16 numbers",
+          number: "Card Number should only contain numbers",
+        },
+        cardType: {
+          required: "Please Provide Card Type",
+        },
+        expire: {
+          required: "Please Provide Expire Date. eg:- January 2023",
+        },
+        cvv: {
+          required: "Please Provide CVV",
+          minlength: "CVV shouldn't be less than 3 numbers",
+          maxlength: "CVV shouldn't be greater than 3 numbers",
+          number: "CVV should only contain numbers",
+        },
+        total: {
+          required: "Total amount is required",
+        },
+      },
+    });
   }, []);
 
+  //---------get booked rooms according to the email
   function getBookedRooms(email) {
     console.log(email);
     axios
@@ -127,6 +123,7 @@ export default function Payment(props) {
       });
   }
 
+  //-----------funtion of send the payment data to backend
   const buyNow = async (e) => {
     e.preventDefault();
 
@@ -148,6 +145,7 @@ export default function Payment(props) {
         console.log(newPayment);
         alert("Payment Completed Successfully");
 
+        //-------------send email of success payment
         axios
           .post("http://localhost:8001/email", payemail)
           .then((response) => setMsg(response.data.respMesg));
@@ -173,6 +171,7 @@ export default function Payment(props) {
         }}
       >
         <div id="pay-form-container">
+          <h1>Payment</h1>
           <form id="pay-form" onSubmit={buyNow}>
             <div>
               <p

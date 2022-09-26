@@ -57,8 +57,9 @@ router.get("/getrooms", (req, res) => {
   });
 });
 
+//---------get available rooms
 router.get("/getrooms/available", (req, res) => {
-  rooms.find({status: 'Available'}).exec((err, room) => {
+  rooms.find({ status: "Available" }).exec((err, room) => {
     if (err) {
       return res.status(400).json({ error: err.message });
     }
@@ -85,14 +86,14 @@ router.route("/deleteroom/:id").delete(async (req, res) => {
     });
 });
 
-
 //Update a Room By Id
 router
   .route("/room/update/:id")
   .put(upload.single("file"), async (req, res) => {
     let roomId = req.params.id;
 
-    const { roomName, roomFeatures, roomAmount, roomType, image, status } = req.body;
+    const { roomName, roomFeatures, roomAmount, roomType, image, status } =
+      req.body;
 
     const updateRoom = {
       roomName,

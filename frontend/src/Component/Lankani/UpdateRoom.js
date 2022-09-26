@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./css/style.css";
-import $ from 'jquery';
-import 'jquery-validation';
-import background from './images/add2.jpg';
+import $ from "jquery";
+import "jquery-validation";
+import background from "./images/add2.jpg";
 
 export default class UpdateRoom extends Component {
   constructor(props) {
@@ -20,11 +20,10 @@ export default class UpdateRoom extends Component {
   }
 
   handleInputChange = (e) => {
-
-    if(e.target.name === 'image'){
-        this.setState({
-            gimage: e.target.files,
-        });
+    if (e.target.name === "image") {
+      this.setState({
+        gimage: e.target.files,
+      });
     }
 
     const { name, value } = e.target;
@@ -34,11 +33,12 @@ export default class UpdateRoom extends Component {
     });
   };
 
+  //----------send updated data into backend
   onSubmit = (e) => {
     e.preventDefault();
 
     const id = this.props.match.params.id;
- 
+
     let formData = new FormData();
     formData.append("roomName", this.state.groomName);
     formData.append("roomFeatures", this.state.groomFeatures);
@@ -46,7 +46,6 @@ export default class UpdateRoom extends Component {
     formData.append("roomType", this.state.groomType);
     formData.append("file", this.state.gimage[0]);
     formData.append("status", this.state.gstatus);
-
 
     axios
       .put(`http://localhost:8001/room/update/${id}`, formData)
@@ -79,85 +78,78 @@ export default class UpdateRoom extends Component {
           groomFeatures: res.data.room.roomFeatures,
           groomAmount: res.data.room.roomAmount,
           groomType: res.data.room.roomType,
-        //   gimage: res.data.room.image,
+          //   gimage: res.data.room.image,
           gstatus: res.data.room.status,
         });
       }
     });
 
-
-    const updateRoomForm = $('#update-form');
+    //------------validate the update form
+    const updateRoomForm = $("#update-form");
 
     updateRoomForm.validate({
-        rules: {
-            groomName: {
-                lettersonly: true,
-                required: true
-                
-            },
-            groomFeatures: {
-                required: true
-            },
-            groomAmount: {
-                number: true,
-                minlength: 0,
-                required: true
-                
-            },
-            groomType: {
-                required: true
-            },
-            file: {
-                extension: "jpg|jpeg|png",
-                
-            }
-
+      rules: {
+        groomName: {
+          lettersonly: true,
+          required: true,
         },
-        messages: {
-            groomName: {
-                lettersonly: "Please enter letters only",
-                required: 'Please Enter Room Name'
-                
-            },
-            groomFeatures: {
-                required: 'Please Enter Room Features'
-            },
-            groomAmount: {
-                required: 'Please Enter Room Amount',
-                number: 'Only Decimal Numbers allowed',
-                minlength: 'Amount should be more than 0'
-            },
-            groomType: {
-                required: 'Please Enter Room Type'
-            },
-            file: {
-                extension: ' Only jpg, jpeg, and png images allowed'
-            }
-        }
-      })
-
-
+        groomFeatures: {
+          required: true,
+        },
+        groomAmount: {
+          number: true,
+          minlength: 0,
+          required: true,
+        },
+        groomType: {
+          required: true,
+        },
+        file: {
+          extension: "jpg|jpeg|png",
+        },
+      },
+      messages: {
+        groomName: {
+          lettersonly: "Please enter letters only",
+          required: "Please Enter Room Name",
+        },
+        groomFeatures: {
+          required: "Please Enter Room Features",
+        },
+        groomAmount: {
+          required: "Please Enter Room Amount",
+          number: "Only Decimal Numbers allowed",
+          minlength: "Amount should be more than 0",
+        },
+        groomType: {
+          required: "Please Enter Room Type",
+        },
+        file: {
+          extension: " Only jpg, jpeg, and png images allowed",
+        },
+      },
+    });
   }
 
   render() {
     return (
-      <div 
-      style={{
-        backgroundImage: `url(${background})`,
-        height: "830px",
-        width: "1025px",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        marginTop: "20px",
-        marginLeft:'5%',
-            paddingTop:'2%',
-            paddingBottom:'2%',
-            marginBottom:'2%'
-    }}>
-    
+      <div
+        style={{
+          backgroundImage: `url(${background})`,
+          height: "830px",
+          width: "1025px",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          marginTop: "20px",
+          marginLeft: "5%",
+          paddingTop: "2%",
+          paddingBottom: "2%",
+          marginBottom: "2%",
+        }}
+      >
         <center>
           <h1>Update Room</h1>
-          <div className="container-update mb-3" >
+          <div className="container-update mb-3">
             <form
               onSubmit={this.onSubmit}
               encType="multipart/form-data"
@@ -249,7 +241,12 @@ export default class UpdateRoom extends Component {
                 />
               </div>
 
-              <button type="submit" className="btn btn-warning pay-btn" id="update-button"><i className="fas fa-edit"></i>
+              <button
+                type="submit"
+                className="btn btn-warning pay-btn"
+                id="update-button"
+              >
+                <i className="fas fa-edit"></i>
                 Update
               </button>
             </form>

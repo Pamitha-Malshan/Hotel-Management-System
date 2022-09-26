@@ -8,24 +8,24 @@ const roomSchema = new mongoose.Schema({
   },
   roomFeatures: {
     type: String,
-    required: true
+    required: true,
   },
   roomAmount: {
     type: String,
-    required: true
+    required: true,
   },
   roomType: {
     type: String,
-    required: true
+    required: true,
   },
   image: {
     type: String,
-    required: true
+    required: true,
   },
   status: {
     type: String,
-    default: "Available"
-  }
+    default: "Available",
+  },
 });
 
 module.exports = mongoose.model("Room", roomSchema);

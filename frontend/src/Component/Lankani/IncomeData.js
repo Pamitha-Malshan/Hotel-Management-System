@@ -24,6 +24,7 @@ export default function GetIncomeData() {
   const [bookedRooms, setBookedRooms] = useState([]);
 
   useEffect(() => {
+    //----------get all booked rooms
     axios
       .get("http://localhost:8001/bookedrooms")
       .then((res) => {
@@ -36,6 +37,7 @@ export default function GetIncomeData() {
       });
   }, []);
 
+  //-----------function for get total income monthly wise
   function getTotalPriceByMonth(data) {
     if (data.length > 0) {
       var monthNames = [
@@ -164,7 +166,7 @@ export default function GetIncomeData() {
   );
 
   return (
-    <div style={{width:'1100px', marginLeft:'40px'}}>
+    <div style={{ width: "1100px", marginLeft: "40px" }}>
       <h1>Income of Room Reservation</h1>
       <Bar
         data={state}
