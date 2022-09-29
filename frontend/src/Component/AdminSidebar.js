@@ -1,7 +1,12 @@
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 import '../CSS/sidebar.css'
 import logo from '../image/logo.png'
 
-function sidebar() {
+function Sidebar() {
+  const loc=  useLocation()
+  console.log(loc);
+  const pathname=loc.pathname
     return (
       <div >
         <aside>
@@ -17,23 +22,23 @@ function sidebar() {
            </div>
         </div> */}
            <div class="sidebar">
-            <a href="#" class="active">
+            <a href="#" >
                 <span class="material-icons-sharp">grid_view</span>
                 <h3>Dashboard</h3>
             </a>
-            <a href="/Employeeattendanceview" className='link'>
+            <a href="/Employeeattendanceview" className='link' class={pathname==="/Employeeattendanceview" ? "active":""} >
                 <span class="material-icons-sharp">group</span>
                 <h3>Employee</h3>
             </a>
-            <a href="/Employeeregister" className='link'>
+            <a href="/Employeeregister" className='link' class={pathname==="/Employeeregister" ? "active":""}>
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Customers</h3>
             </a>
-            <a href="/room" className='link'>
+            <a href="/room" className='link' class={pathname==="/room" ? "active":""}>
                 <span class="material-icons-sharp">bed</span>
                 <h3>Rooms</h3>
             </a>
-            <a href="#" className='link'>
+            <a href="/food" className='link' class={pathname==="/food" ? "active":""} >
                 <span class="material-icons-sharp">receipt_long</span>
                 <h3>Orders</h3>
             </a>
@@ -72,4 +77,4 @@ function sidebar() {
     );
   }
   
-  export default sidebar;
+  export default Sidebar;
