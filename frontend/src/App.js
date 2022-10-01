@@ -60,6 +60,11 @@ function App() {
                 exact
                 component={Sidebar}
               ></Route>
+              <Route
+                path="/Employeereport"
+                exact
+                component={Sidebar}
+              ></Route>
 
               {/*Ayeshi */}
 
@@ -94,6 +99,11 @@ function App() {
               <Route path="/EmployeeView" exact component={Topbar}></Route>
               <Route
                 path="/Employeeattendance"
+                exact
+                component={Topbar}
+              ></Route>
+               <Route
+                path="/Employeereport"
                 exact
                 component={Topbar}
               ></Route>
