@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import payBackground from "./images/payback.jpg";
 // import './validator/PaymentValidate';
@@ -7,6 +8,8 @@ import "jquery-validation";
 
 export default function Payment(props) {
   const semail = props.match.params.email;
+
+  let navigate = useHistory();
 
   const [bookedrooms, setBookedRooms] = useState([]);
   const [email, setEmail] = useState(semail);
@@ -25,7 +28,7 @@ export default function Payment(props) {
 
   useEffect(() => {
     //---------call the get booked rooms function
-    getBookedRooms(email);
+    getBookedRooms(semail);
 
     //-------------validate the payment form
     const createRoomForm = $("#pay-form");
@@ -149,6 +152,8 @@ export default function Payment(props) {
         axios
           .post("http://localhost:8001/email", payemail)
           .then((response) => setMsg(response.data.respMesg));
+
+        
       })
       .catch((err) => {
         if (err.response) alert("Response " + err.response.message);
@@ -156,6 +161,9 @@ export default function Payment(props) {
         else if (err.message) alert("Other " + err.message);
         else alert(err);
       });
+
+      navigate.push("/search");
+
   };
 
   return (
@@ -164,14 +172,14 @@ export default function Payment(props) {
         className="container-payment"
         style={{
           backgroundImage: `url(${payBackground})`,
-          height: "700px",
+          height: "800px",
           width: "95%",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
         <div id="pay-form-container">
-          <h1>Payment</h1>
+          <h1 style={{color: 'white'}}>Payment</h1>
           <form id="pay-form" onSubmit={buyNow}>
             <div>
               <p

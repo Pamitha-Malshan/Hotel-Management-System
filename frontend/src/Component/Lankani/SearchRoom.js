@@ -139,8 +139,11 @@ export default class SearchRoom extends Component {
                               state: {
                                 RoomName: room.roomName,
                                 Amount: room.roomAmount,
-                              },
+                              }
+                              
+                              
                             }}
+                           
                             className="btn btn-default"
                             id="book-button"
                             type="submit"

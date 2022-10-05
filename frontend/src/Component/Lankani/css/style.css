@@ -3,7 +3,7 @@
 }
 
 #reservation-form {
-width: 50%;
+
 margin-top: 5%;
 margin-left: 10%;
 
@@ -41,8 +41,13 @@ padding-left: -15%;
 
 .container-payment{
   width: 75%;
- 
   
+  
+}
+
+#reserve-btn{
+  width: 200px;
+  height: 60px;
   
 }
 
@@ -84,6 +89,8 @@ h1 {
   margin-top: 1%;
   margin-bottom: 18%;
 }
+
+
 
 .error{
   color: red;

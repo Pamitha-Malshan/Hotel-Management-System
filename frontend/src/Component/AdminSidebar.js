@@ -55,7 +55,7 @@ function Sidebar() {
                 <span class="material-icons-sharp">inventory</span>
                 <h3>Products</h3>
             </a>
-            <a href="/EmployeeReport">
+            <a href="/report">
                 <span class="material-icons-sharp">report_gmailerrorred</span>
                 <h3>Reports</h3>
             </a>
