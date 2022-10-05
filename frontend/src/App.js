@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, withRouter } from "react-router-dom";
 
 import Sidebar from "./Component/AdminSidebar";
 import Topbar from "./Component/Topbar";
@@ -22,7 +22,7 @@ import RoomReservation from "./Component/Lankani/RoomReservation";
 import SearchRoom from "./Component/Lankani/SearchRoom";
 import Payment from "./Component/Lankani/PaymentAdd";
 // import MonthlyIncomReport from "./Component/Lankani/MonthlyReservationIncom";
-import GetIncomeData from "./Component/Lankani/IncomeData";
+// import GetIncomeData from "./Component/Lankani/IncomeData";
 import PaymentIncome from "./Component/Lankani/PayIncome";
 
 function App() {
@@ -63,7 +63,8 @@ function App() {
               <Route path="/room" exact component={Sidebar}></Route>
               <Route path="/viewroom" exact component={Sidebar}></Route>
               <Route path="/room/update/:id" exact component={Sidebar}></Route>
-              <Route path="/income" exact component={Sidebar}></Route>
+              {/* <Route path="/income" exact component={Sidebar}></Route> */}
+              <Route path="/paymentincome" exact component={Sidebar}></Route>
             </div>
           </div>
           <div className="col order-2">
@@ -95,10 +96,11 @@ function App() {
               <Route path="/room" exact component={Topbar}></Route>
               <Route path="/viewroom" exact component={Topbar}></Route>
               <Route path="/room/update/:id" exact component={Topbar}></Route>
-              <Route path="/roomreservation" exact component={Topbar}></Route>
+              <Route path="/roomreservation" exact component={withRouter(Topbar)}></Route>
               <Route path="/search" exact component={Topbar}></Route>
               <Route path="/pay/:email" exact component={Topbar}></Route>
-              <Route path="/income" exact component={Topbar}></Route>
+              {/* <Route path="/income" exact component={Topbar}></Route> */}
+              <Route path="/paymentincome" exact component={Topbar}></Route>
             </div>
             <div className="row">
               <div className="col-md-12">
@@ -145,9 +147,9 @@ function App() {
                   <Route path="/viewroom" exact component={ManageRooms}></Route>
                   <Route path="/room/update/:id" exact component={UpdateRoom}></Route>
                   <Route path="/search" exact component={SearchRoom}></Route>
-                  <Route path="/roomreservation" exact component={RoomReservation}></Route>
+                  <Route path="/roomreservation" exact component={withRouter(RoomReservation)}></Route>
                   <Route path="/pay/:email" exact component={Payment}></Route>
-                  <Route path="/income" exact component={GetIncomeData}></Route>
+                  {/* <Route path="/income" exact component={GetIncomeData}></Route> */}
                   <Route path="/paymentincome" exact component={PaymentIncome}></Route>
                 </div>
               </div>
@@ -175,9 +177,10 @@ function App() {
           <Route path="/viewroom" exact component={Footer}></Route>
           <Route path="/room/update/:id" exact component={Footer}></Route>
           <Route path="/search" exact component={Footer}></Route>
-          <Route path="/roomreservation" exact component={Footer}></Route>
+          <Route path="/roomreservation" exact component={withRouter(Footer)}></Route>
           <Route path="/pay/:email" exact component={Footer}></Route>
-          <Route path="/income" exact component={Footer}></Route>
+          {/* <Route path="/income" exact component={Footer}></Route> */}
+          <Route path="/paymentincome" exact component={Footer}></Route>
         </div>
       </div>
     </BrowserRouter>

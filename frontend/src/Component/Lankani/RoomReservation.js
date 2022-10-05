@@ -157,6 +157,7 @@ export default function RoomReservation(props) {
         else if (err.message) alert("Other " + err.message);
         else alert(err);
       });
+      
 
     // history.push("/pay", {data: data});
   };

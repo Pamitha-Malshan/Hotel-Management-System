@@ -164,14 +164,14 @@ export default function Payment(props) {
         className="container-payment"
         style={{
           backgroundImage: `url(${payBackground})`,
-          height: "700px",
+          height: "800px",
           width: "95%",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
         <div id="pay-form-container">
-          <h1>Payment</h1>
+          <h1 style={{color: 'white'}}>Payment</h1>
           <form id="pay-form" onSubmit={buyNow}>
             <div>
               <p
