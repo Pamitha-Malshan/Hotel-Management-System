@@ -11,6 +11,8 @@ const RoomRouter = require('./Routes/RoomRoute');
 const RoomBooking = require('./Routes/RoomBookingRoutes');
 const PaymentRouter = require('./Routes/PaymentRoute');
 const EmailRouter = require('./Routes/EmailRoute');
+const FoodRouter= require("./Routes/foodRoute")
+const OrderFood = require('./Routes/OrderFoodRoute');
 
 const app = express();
 
@@ -29,6 +31,8 @@ app.use(RoomBooking);
 app.use(PaymentRouter);
 app.use(EmailRouter);
 
+app.use(FoodRouter);
+app.use(OrderFood);
 
 
 const PORT = 8001;

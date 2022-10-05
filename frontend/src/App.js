@@ -25,6 +25,13 @@ import Payment from "./Component/Lankani/PaymentAdd";
 // import GetIncomeData from "./Component/Lankani/IncomeData";
 import PaymentIncome from "./Component/Lankani/PayIncome";
 
+import AddFood from "./Component/Akeel/AddFood";
+import ManageFoods from "./Component/Akeel/GetFood";
+import Food from "./Component/Akeel/Food";
+import UpdateFood from "./Component/Akeel/UpdateFood";
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -53,10 +60,20 @@ function App() {
                 exact
                 component={Sidebar}
               ></Route>
+              <Route
+                path="/Employeereport"
+                exact
+                component={Sidebar}
+              ></Route>
 
               {/*Ayeshi */}
 
               {/*Akeel */}
+              <Route path="/insertfood" exact component={Sidebar}></Route>
+              <Route path="/viewfood" exact component={Sidebar}></Route>
+              <Route path="/Food" exact component={Sidebar}></Route>
+              <Route path="/food/update/:id" exact component={Sidebar}></Route>
+              
 
               {/*Lankani */}
               <Route path="/insertroom" exact component={Sidebar}></Route>
@@ -86,10 +103,19 @@ function App() {
                 exact
                 component={Topbar}
               ></Route>
+               <Route
+                path="/Employeereport"
+                exact
+                component={Topbar}
+              ></Route>
 
               {/*Ayeshi */}
 
               {/*Akeel */}
+              <Route path="/insertfood" exact component={Topbar}></Route>
+              <Route path="/viewfood" exact component={Topbar}></Route>
+              <Route path="/Food" exact component={Topbar}></Route>
+              <Route path="/food/update/:id" exact component={Topbar}></Route>
 
               {/*Lankani */}
               <Route path="/insertroom" exact component={Topbar}></Route>
@@ -139,6 +165,11 @@ function App() {
                   {/*Ayeshi */}
 
                   {/*Akeel */}
+                  <Route path="/insertfood" exact component={AddFood}></Route>
+                  <Route path="/viewfood" exact component={ManageFoods}></Route>
+                  <Route path="/food" exact component={Food}></Route>
+                  <Route path="/food/update/:id" exact component={UpdateFood}></Route>
+                  
 
                   {/*Lankani */}
 
@@ -171,6 +202,11 @@ function App() {
             component={Footer}
           ></Route>
           <Route path="/Employeereport" exact component={Footer}></Route>
+
+          <Route path="/insertfood" exact component={Footer}></Route>
+          <Route path="/viewfood" exact component={Footer}></Route>
+          <Route path="/food" exact component={Footer}></Route>
+          <Route path="/food/update/:id" exact component={Footer}></Route>
 
           <Route path="/insertroom" exact component={Footer}></Route>
           <Route path="/room" exact component={Footer}></Route>
