@@ -181,7 +181,9 @@ export default function RoomReservation(props) {
             paddingBottom: "2%",
           }}
         >
-          <form encType="multipart/form-data" id="reservation-form">
+          <form encType="multipart/form-data" id="reservation-form" style={{
+            width: '80%',
+          }}>
             <div className="mb-3">
               <label for="roomName" className="form-label">
                 Room Name{" "}
@@ -370,6 +372,7 @@ export default function RoomReservation(props) {
               <br />
               <div id="reserve-button">
                 <button
+                  id="reserve-btn"
                   className="btn btn-outline-primary mr-1"
                   onClick={clearForm}
                 >
@@ -377,6 +380,7 @@ export default function RoomReservation(props) {
                 </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <Link
+                  id="reserve-btn"
                   onClick={handleSubmit}
                   to={{
                     pathname: `/pay/${email}`,

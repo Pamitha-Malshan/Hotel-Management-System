@@ -29,6 +29,7 @@ import AddFood from "./Component/Akeel/AddFood";
 import ManageFoods from "./Component/Akeel/GetFood";
 import Food from "./Component/Akeel/Food";
 import UpdateFood from "./Component/Akeel/UpdateFood";
+import Report from "./Component/Lankani/Report";
 
 
 
@@ -82,6 +83,7 @@ function App() {
               <Route path="/room/update/:id" exact component={Sidebar}></Route>
               {/* <Route path="/income" exact component={Sidebar}></Route> */}
               <Route path="/paymentincome" exact component={Sidebar}></Route>
+              <Route path="/report" exact component={Sidebar}></Route>
             </div>
           </div>
           <div className="col order-2">
@@ -127,6 +129,7 @@ function App() {
               <Route path="/pay/:email" exact component={Topbar}></Route>
               {/* <Route path="/income" exact component={Topbar}></Route> */}
               <Route path="/paymentincome" exact component={Topbar}></Route>
+              <Route path="/report" exact component={Topbar}></Route>
             </div>
             <div className="row">
               <div className="col-md-12">
@@ -182,6 +185,7 @@ function App() {
                   <Route path="/pay/:email" exact component={Payment}></Route>
                   {/* <Route path="/income" exact component={GetIncomeData}></Route> */}
                   <Route path="/paymentincome" exact component={PaymentIncome}></Route>
+                  <Route path="/report" exact component={Report}></Route>
                 </div>
               </div>
             </div>
@@ -217,6 +221,7 @@ function App() {
           <Route path="/pay/:email" exact component={Footer}></Route>
           {/* <Route path="/income" exact component={Footer}></Route> */}
           <Route path="/paymentincome" exact component={Footer}></Route>
+          <Route path="/report" exact component={Footer}></Route>
         </div>
       </div>
     </BrowserRouter>
