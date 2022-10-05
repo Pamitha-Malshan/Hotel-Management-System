@@ -186,7 +186,7 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <Route path="/hotelgreen" exact component={LandingPage}></Route>
+          <Route path="/" exact component={LandingPage}></Route>
 
           {/* Footer */}
           {/* <Footer/> */}
