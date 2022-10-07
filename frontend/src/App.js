@@ -31,6 +31,11 @@ import Food from "./Component/Akeel/Food";
 import UpdateFood from "./Component/Akeel/UpdateFood";
 import Report from "./Component/Lankani/Report";
 
+import CustomerSignup from "./Component/Ayeshi/CustomerSignup";
+import CustomerSignin from "./Component/Ayeshi/CustomerSignin";
+import AllCustomers from "./Component/Ayeshi/AllCustomers";
+import HomePage from "./Component/Ayeshi/HomePage";
+
 
 
 function App() {
@@ -68,6 +73,8 @@ function App() {
               ></Route>
 
               {/*Ayeshi */}
+              <Route path="/AllCustomers" exact component={Sidebar}></Route>
+            
 
               {/*Akeel */}
               <Route path="/insertfood" exact component={Sidebar}></Route>
@@ -112,6 +119,10 @@ function App() {
               ></Route>
 
               {/*Ayeshi */}
+              <Route path="/CustomerSignup" exact component={Topbar}></Route>
+              <Route path="/CustomerSignin" exact component={Topbar}></Route>
+              <Route path="/AllCustomers" exact component={Topbar}></Route>
+             
 
               {/*Akeel */}
               <Route path="/insertfood" exact component={Topbar}></Route>
@@ -166,6 +177,11 @@ function App() {
                   ></Route>
 
                   {/*Ayeshi */}
+                  <Route path="/CustomerSignup" exact component={CustomerSignup}></Route>
+                  <Route path="/CustomerSignin" exact component={CustomerSignin}></Route>
+                  <Route path="/AllCustomers" exact component={AllCustomers}></Route>
+                  <Route path="/HomePage" exact component={HomePage}></Route>
+                  
 
                   {/*Akeel */}
                   <Route path="/insertfood" exact component={AddFood}></Route>
@@ -222,6 +238,11 @@ function App() {
           {/* <Route path="/income" exact component={Footer}></Route> */}
           <Route path="/paymentincome" exact component={Footer}></Route>
           <Route path="/report" exact component={Footer}></Route>
+
+          <Route path="/CustomerSignup" exact component={Footer}></Route>
+          <Route path="/CustomerSignin" exact component={Footer}></Route>
+          <Route path="/AllCustomers" exact component={Footer}></Route>
+        
         </div>
       </div>
     </BrowserRouter>
