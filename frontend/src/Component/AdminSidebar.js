@@ -30,7 +30,7 @@ function Sidebar() {
                 <span class="material-icons-sharp">group</span>
                 <h3>Employee</h3>
             </a>
-            <a href="/Employeeregister" className='link' class={pathname==="/Employeeregister" ? "active":""}>
+            <a href="/AllCustomers" className='link' class={pathname==="/AllCustomers" ? "active":""}>
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Customers</h3>
             </a>

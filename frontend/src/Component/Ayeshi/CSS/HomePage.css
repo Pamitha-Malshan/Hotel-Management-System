@@ -1,0 +1,51 @@
+.homebackground{
+    width: 1550px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../images/b1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+   
+}
+
+
+  .homename{
+       color:white;
+       position: absolute;
+       top: 32%;
+       left: 25%;
+       text-transform: uppercase;
+} 
+
+.homename h1{
+    font-size: 70px;
+    text-shadow: 2px 2px #ff0000;
+    font-style: italic;
+}
+.homename h1:hover{
+    font-size: 75px;
+}
+
+.homename h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.homename button{
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+        margin-left: 8px;
+        color: white;
+        font-weight: 100px;
+        background: none;
+        border: 3px solid rgb(213, 6, 6);
+        font-size: 25px;
+        
+}
+.homename button:hover{
+    border: 3px solid rgb(153, 230, 37); 
+}
+
