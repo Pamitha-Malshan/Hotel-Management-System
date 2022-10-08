@@ -25,12 +25,12 @@ router.post("/CustomerSignin",(req,res)=>{
 // Route for Customer Signup
 router.post("/CustomerSignup",(req,res)=>{
     console.log(req.body) 
-    const {name,email,mobile,password,cpassword,image} =req.body;
+    const {name,email,mobile,password,cpassword} =req.body;
     Customer.findOne({email:email},(err,customer)=>{
         if(customer){
             res.send({message:"User Already Exist"})
         }else {
-            const customer = new Customer({name,email,mobile,password,cpassword,image})
+            const customer = new Customer({name,email,mobile,password,cpassword})
             customer.save(err=>{
                 if(err){
                     res.send(err)
