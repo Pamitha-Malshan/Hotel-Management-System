@@ -8,8 +8,12 @@ function Piechart() {
   const [studentMarks, setStudentMarks] = useState([]);
   const [employee, setemployee] = useState([]);
 
+  // const [ctotal, setctotal] = useState(3);
+  // const [wtotal, setwtotal] = useState(4);
+  // const [wstotal, setwstotal] = useState(5);
+
   useEffect(() => {
-    //----------get all booked rooms
+  
     axios
       .get("http://localhost:8001/getemployee")
       .then((res) => {
@@ -21,12 +25,16 @@ function Piechart() {
         alert(err.message);
       });
 
-      const srole = ["Cheff", "Waiter", "Waitress"];
-      const sage = [];
+      const srole = ["Cheff", "Waiter", "Waitress", "Housekeeper"];
+     
+      const sage = [   ];
     
-    let ctotal = 0;
-    let wtotal = 0;
-    let wstotal = 0;
+      
+    
+    var ctotal =  5;
+    var wtotal = 7;
+    var wstotal = 6;
+    var Htotal = 4;
     
     for (let i = 0; i < employee.length; i++) {
       switch (employee[i].role) {
@@ -46,28 +54,34 @@ function Piechart() {
           break;
       }
     
+   
       // console.log(employee[i].role);
       // srole.push(employee[i].role);
       // sage.push(parseInt(employee[i].age));
     }
+
+
+
     setrole(srole);
     setStudentMarks(sage);
+
+    // setctotal(ctotal);
+    // setwtotal(wtotal);
+    // setwstotal(wstotal);
     
     sage.push(ctotal);
     sage.push(wtotal);
     sage.push(wstotal);
-    
-    console.log(ctotal);
-    console.log(wtotal);
-    
-    
-    
+    sage.push(Htotal);
 
+   
      
   }, []);
 
   console.log(employee);
-
+    // console.log(ctotal);
+    // console.log(wtotal);
+    // console.log(wstotal);
  
   // function count (){
   // useEffect(() => {
@@ -112,14 +126,14 @@ function Piechart() {
   // }, []);
   // }
 
-   console.log(studentMarks);
+  //  console.log(studentMarks);
 
   return (
     <React.Fragment>
       <center>
-        <div className="container-fluid mb-3">
-          <h1>Welcome to Piechart </h1>
-
+        <div className="container-fluid mb-3" >
+          <h1 style={{margintop:"30px" }}>Welcome to Employee Position Piechart </h1>
+          
           <Chart
             type="pie"
             width={550}

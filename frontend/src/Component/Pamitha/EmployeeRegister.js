@@ -3,10 +3,12 @@ import employeepic from "./image/employee.jpg";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { useForm} from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import SendIcon from "@mui/icons-material/Send";
+
 import {
   Button,
   Radio,
@@ -21,7 +23,7 @@ const schema = yup
     name: yup.string().required("Name Field is Empty").min(5),
     email: yup.string().required().email(),
     age: yup.number().required("Age Field is Empty").min(18).max(50),
-    IDNO: yup.number().positive().integer().required(),
+    IDNO: yup.string().required("IDNO Field is required").min(10),
     role: yup.string().required("Job Role Field is Empty"),
   })
   .required();
@@ -42,6 +44,8 @@ export default function FormPropsTextFields() {
   const [gender, setgender] = useState("");
   const [role, setrole] = useState("");
 
+  let navigate = useHistory();
+
   const passData = (data) => {
     const emp = {
       name,
@@ -58,12 +62,18 @@ export default function FormPropsTextFields() {
       .post("http://localhost:8001/save", data)
       .then(() => {
         alert("Add New Employee");
-
-        setname(" ");
+      
+        setname("");
+        setemail("");
+        setIDNO("");
+        // navigate.push('/hotelgreen');
+        window.location = "/Employeeregister";
       })
       .catch((err) => {
         alert(err);
       });
+
+     
   };
 
   return (
@@ -90,7 +100,7 @@ export default function FormPropsTextFields() {
             <p style={{ color: "red" }}>{errors.name?.message}</p>
           
             <TextField
-              label="Enter employer email"
+              label="Enter employee email"
               type="email"
               id="email"
               style={{ width: "60%" }}
@@ -103,7 +113,7 @@ export default function FormPropsTextFields() {
             <p style={{ color: "red" }}>{errors.email?.message}</p>
           
             <TextField
-              label="Enter employer national ID number"
+              label="Enter employee National ID Number"
               type="text"
               id="IDNO"
               style={{ width: "60%" }}
@@ -117,7 +127,7 @@ export default function FormPropsTextFields() {
             <p style={{ color: "red" }}>{errors.IDNO?.message}</p>
             
             <TextField
-              label="Enter employer age"
+              label="Enter Employee Age"
               type="number"
               id="age"
               style={{ width: "60%" }}
@@ -160,7 +170,7 @@ export default function FormPropsTextFields() {
 
           
             <TextField
-              label="Enter employer job role"
+              label="Enter Employee Job Role"
               type="text"
               id="role"
               style={{ width: "60%" }}

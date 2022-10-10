@@ -42,7 +42,7 @@
 
 .name h1{
     font-size: 70px;
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 2px 2px #27ee24;
     font-style: italic;
 }
 .name h1:hover{
@@ -62,7 +62,7 @@
         color: aliceblue;
         font-weight: 20px;
         background: none;
-        border: 3px solid rgb(213, 6, 6);
+        border: 3px solid rgb(64, 240, 61);
         font-size: 25px;
         
 }

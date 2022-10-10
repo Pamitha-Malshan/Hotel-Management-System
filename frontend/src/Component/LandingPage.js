@@ -12,7 +12,7 @@ function Landingpage(){
                     </div>
          <div className='name'>
               <h1>Hotel green</h1>
-              <h2>It's Time For Adventures & experiences</h2>
+              <h2 style={{color:"white"}}>It's Time For Adventures & experiences</h2>
               <a href='/Signin'>
               <button type='text'>Sign in</button>
               </a>

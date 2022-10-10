@@ -34,50 +34,16 @@ router.get('/getemployee', (req,res) =>{
     });
 });
 
-// router.get("/getemployer/:id",(req,res) =>{
-//     let postId = req.params.id;
-
-//     Employee.findById(postId,(err,post)=>{
-//         if(err){
-//             return res.status(400).json({success:false, err});
-//         }
-//         return res.status(200).json({
-//             success:true,
-//             post
-//         });
-//     });
-// });
-
-// router.put('/updateemployee/:id',(req,res)=>{
-//     Employee.findByIdAndUpdate(
-//         req.params.id,
-//         {
-//             $set:req.body
-//         },
-//         (err,post)=>{
-//             if(err){
-//                 return res.status(400).json({error:err});
-//             }
-//             return res.status(200).json({
-//                 success:"Update Successfully"
-//             });
-//         }
-//     );
-// });
-
-router.get("/get/:id", (req,res) =>{
-
+router.get("/get/:id",(req,res) =>{
     let postId = req.params.id;
 
-    Employee.findById(postId,(err,post) =>{
-
+    Employee.findById(postId,(err,post)=>{
         if(err){
             return res.status(400).json({success:false, err});
         }
-
         return res.status(200).json({
             success:true,
-            existingEmployee:post
+            post
         });
     });
 });
@@ -93,11 +59,45 @@ router.put('/update/:id',(req,res)=>{
                 return res.status(400).json({error:err});
             }
             return res.status(200).json({
-                success:"Update successfully"
+                success:"Update Successfully"
             });
         }
     );
 });
+
+// router.get("/get/:id", (req,res) =>{
+
+//     let postId = req.params.id;
+
+//     Employee.findById(postId,(err,post) =>{
+
+//         if(err){
+//             return res.status(400).json({success:false, err});
+//         }
+
+//         return res.status(200).json({
+//             success:true,
+//             existingEmployee:post
+//         });
+//     });
+// });
+
+// router.put('/update/:id',(req,res)=>{
+//     Employee.findByIdAndUpdate(
+//         req.params.id,
+//         {
+//             $set:req.body
+//         },
+//         (err,post)=>{
+//             if(err){
+//                 return res.status(400).json({error:err});
+//             }
+//             return res.status(200).json({
+//                 success:"Update successfully"
+//             });
+//         }
+//     );
+// });
 
 router.route("/deleteemployee/:id").delete(async (req, res) =>{
 

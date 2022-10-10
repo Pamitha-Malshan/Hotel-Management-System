@@ -167,12 +167,14 @@ export default class GetMark extends Component {
                 </div>
             </div>
             </a>
+            <a href="/Employeereport">
             <div className="row">
                 <div className="dashboard">
                 <span class="material-icons-sharp">report</span>
                     <h2>Employee Report</h2>
                 </div>
             </div>
+            </a>
             </center>
         </div>
       
