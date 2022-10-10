@@ -35,6 +35,9 @@ import CustomerSignup from "./Component/Ayeshi/CustomerSignup";
 import CustomerSignin from "./Component/Ayeshi/CustomerSignin";
 import AllCustomers from "./Component/Ayeshi/AllCustomers";
 import HomePage from "./Component/Ayeshi/HomePage";
+import WelcomePage from "./Component/Ayeshi/WelcomePage";
+import ViewPage from "./Component/Ayeshi/ViewPage";
+import NationPiechart from "./Component/Ayeshi/CustomersReport";
 
 
 
@@ -74,6 +77,7 @@ function App() {
 
               {/*Ayeshi */}
               <Route path="/AllCustomers" exact component={Sidebar}></Route>
+              <Route path="/NationPiechart" exact component={Sidebar}></Route>
             
 
               {/*Akeel */}
@@ -122,7 +126,8 @@ function App() {
               <Route path="/CustomerSignup" exact component={Topbar}></Route>
               <Route path="/CustomerSignin" exact component={Topbar}></Route>
               <Route path="/AllCustomers" exact component={Topbar}></Route>
-             
+              <Route path="/ViewPage" exact component={Topbar}></Route>
+              <Route path="/NationPiechart" exact component={Topbar}></Route>
 
               {/*Akeel */}
               <Route path="/insertfood" exact component={Topbar}></Route>
@@ -175,13 +180,15 @@ function App() {
                     exact
                     component={EmployeeReport}
                   ></Route>
+                  <Route path="/LandingPage" exact component={LandingPage}></Route>
 
                   {/*Ayeshi */}
                   <Route path="/CustomerSignup" exact component={CustomerSignup}></Route>
                   <Route path="/CustomerSignin" exact component={CustomerSignin}></Route>
                   <Route path="/AllCustomers" exact component={AllCustomers}></Route>
                   <Route path="/HomePage" exact component={HomePage}></Route>
-                  
+                  <Route path="/ViewPage" exact component={ViewPage}></Route>
+                  <Route path="/NationPiechart" exact component={NationPiechart}></Route>
 
                   {/*Akeel */}
                   <Route path="/insertfood" exact component={AddFood}></Route>
@@ -208,7 +215,7 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <Route path="/" exact component={LandingPage}></Route>
+          <Route path="/" exact component={WelcomePage}></Route>
 
           {/* Footer */}
           {/* <Footer/> */}
@@ -242,6 +249,8 @@ function App() {
           <Route path="/CustomerSignup" exact component={Footer}></Route>
           <Route path="/CustomerSignin" exact component={Footer}></Route>
           <Route path="/AllCustomers" exact component={Footer}></Route>
+          <Route path="/ViewPage" exact component={Footer}></Route>
+          <Route path="/NationPiechart" exact component={Footer}></Route>
         
         </div>
       </div>

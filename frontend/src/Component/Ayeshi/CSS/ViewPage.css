@@ -1,0 +1,55 @@
+.viewbackground{
+    width: 1550px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+   
+}
+
+
+  .viewname{
+       color:white;
+       position: absolute;
+       top: 32%;
+       left: 25%;
+       text-transform: uppercase;
+} 
+
+.viewname h1{
+    font-size: 70px;
+    text-shadow: 2px 2px #ff0000;
+    font-style: italic;
+}
+.viewname h1:hover{
+    font-size: 75px;
+}
+
+.viewname h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.viewname button{
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    margin-left: 8px;
+    color: white;
+    font-weight: 100px;
+    background: none;
+    border: 3px solid rgb(213, 6, 6);
+    font-size: 25px;
+    
+}
+.viewname button:hover{
+border: 3px solid rgb(153, 230, 37); 
+}
+.card-group {
+    width: 90%;
+    height: 90%;
+    margin-left: 7%;
+    margin-top: 1%;
+    margin-bottom: 18%;
+    position: relative;
+  }
+  
