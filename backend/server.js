@@ -13,6 +13,8 @@ const PaymentRouter = require('./Routes/PaymentRoute');
 const EmailRouter = require('./Routes/EmailRoute');
 const FoodRouter= require("./Routes/foodRoute")
 const OrderFood = require('./Routes/OrderFoodRoute');
+const customer = require('./Routes/customer');
+
 
 const app = express();
 
@@ -33,6 +35,10 @@ app.use(EmailRouter);
 
 app.use(FoodRouter);
 app.use(OrderFood);
+
+app.use(customer);
+
+
 
 
 const PORT = 8001;
