@@ -2,7 +2,6 @@ import "./CSS/CustomerSignup.css";
 import React, { Component } from "react";
 import axios from "axios";
 
-
 export default class CustomerSignup extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +11,9 @@ export default class CustomerSignup extends Component {
       mobile:"",
       password: "",
       cpassword: "",
+      nation:"",
+     
+     
       
     };
   }
@@ -28,7 +30,7 @@ export default class CustomerSignup extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, email,mobile, password, cpassword } = this.state;
+    const { name, email,mobile, password, cpassword,nation} = this.state;
     if (password === cpassword) {
       const data = {
         name: name,
@@ -36,6 +38,9 @@ export default class CustomerSignup extends Component {
         mobile: mobile,
         password: password,
         cpassword: cpassword,
+        nation: nation,
+      
+        
       
       };
       console.log(data);
@@ -124,8 +129,19 @@ export default class CustomerSignup extends Component {
                         onChange={this.handleInputChange}
                       />
                     </div>
-                  
-    
+                    <div class="cus-input-field">
+                    <i class="fa-solid fa-globe"></i>
+                      <input
+                        type="nation"
+                        placeholder="Nation( Srilankan / Forign)"
+                        id="nation"
+                        name="nation"
+                        value={this.state.nation}
+                        onChange={this.handleInputChange}
+                      />
+                    </div>
+                    
+  
 
                     <div>
 

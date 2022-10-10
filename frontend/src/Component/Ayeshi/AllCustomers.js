@@ -3,6 +3,7 @@ import "./CSS/AllCustomers.css";
 import React, { Component } from "react";
 import axios from "axios";
 
+
 export default class AllCustomers extends Component {
   constructor(props) {
     super(props);
@@ -44,6 +45,13 @@ export default class AllCustomers extends Component {
     });
   };
 
+  onDelete = (id) => {
+    axios.delete(`http://localhost:8001/deletecustomer/${id}`).then((res) => {
+      alert("Delete Successfully");
+      this.retrivePosts();
+    });
+  };
+
  
   render() {
     return (
@@ -75,6 +83,7 @@ export default class AllCustomers extends Component {
                   <th>Customer Name</th>
                   <th>Customer Email</th>
                   <th>Customer Mobile</th>
+                  <th>Nation</th>
                   
                   
                 </tr>
@@ -87,14 +96,31 @@ export default class AllCustomers extends Component {
                     <td>{customers.name}</td>
                     <td>{customers.email}</td>
                     <td>{customers.mobile}</td>
+                    <td>{customers.nation}</td>
                     
-                    
+                    <td>
+                      <button
+                        type="button"
+                        className="btn btn-warning"
+                        onClick={() => this.onDelete(customers._id)}
+                      >
+                        <i className="fas fa-trash-alt"></i> Delete
+                      </button>
+                    </td>
 
                     
                   </tr>
                 ))}
               </tbody>
             </table>
+            <a href="/NationPieChart">
+            <div className="row">
+                <div className="cus-dashboard">
+                <span class="material-icons-sharp">report</span>
+                    <h2>Customer Report</h2>
+                </div>
+            </div>
+            </a>
           </div>
         </center>
       </div>

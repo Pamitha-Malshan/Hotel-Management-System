@@ -39,7 +39,7 @@ export default class CustomerSignin extends Component {
     axios.post("http://localhost:8001/CustomerSignin", data)
     .then(res => {
       alert("Customer Login successful!")
-      this.props.history.push(`/CustomerProfile`)
+      this.props.history.push(`/ViewPage`)
       window.location.reload();
   }).catch(err => {
       console.log(err);
