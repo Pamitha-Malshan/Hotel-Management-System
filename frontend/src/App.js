@@ -24,18 +24,22 @@ import Payment from "./Component/Lankani/PaymentAdd";
 // import MonthlyIncomReport from "./Component/Lankani/MonthlyReservationIncom";
 // import GetIncomeData from "./Component/Lankani/IncomeData";
 import PaymentIncome from "./Component/Lankani/PayIncome";
+import Report from "./Component/Lankani/Report";
 
 import AddFood from "./Component/Akeel/AddFood";
 import ManageFoods from "./Component/Akeel/GetFood";
 import Food from "./Component/Akeel/Food";
 import UpdateFood from "./Component/Akeel/UpdateFood";
-import Report from "./Component/Lankani/Report";
+import SearchFood from "./Component/Akeel/SearchFood";
+import OrderFood from "./Component/Akeel/FoodOrder";
+import PaymentOrder from "./Component/Akeel/PaymentAdd";
+import OrderReport from "./Component/Akeel/orderIncome";
 
 import CustomerSignup from "./Component/Ayeshi/CustomerSignup";
 import CustomerSignin from "./Component/Ayeshi/CustomerSignin";
 import AllCustomers from "./Component/Ayeshi/AllCustomers";
 import HomePage from "./Component/Ayeshi/HomePage";
-import WelcomePage from "./Component/Ayeshi/WelcomePage";
+import Welcomepage from "./Component/Ayeshi/WelcomePage";
 import ViewPage from "./Component/Ayeshi/ViewPage";
 import NationPiechart from "./Component/Ayeshi/CustomersReport";
 import UpdateCustomer from "./Component/Ayeshi/UpdateCustomer";
@@ -87,6 +91,8 @@ function App() {
               <Route path="/viewfood" exact component={Sidebar}></Route>
               <Route path="/Food" exact component={Sidebar}></Route>
               <Route path="/food/update/:id" exact component={Sidebar}></Route>
+              <Route path="/payFood/:email" exact component={Topbar}></Route>
+              <Route path="/orderreport" exact component={Sidebar}></Route>
               
 
               {/*Lankani */}
@@ -137,6 +143,8 @@ function App() {
               <Route path="/viewfood" exact component={Topbar}></Route>
               <Route path="/Food" exact component={Topbar}></Route>
               <Route path="/food/update/:id" exact component={Topbar}></Route>
+              <Route path="/orderreport" exact component={Topbar}></Route>
+              
 
               {/*Lankani */}
               <Route path="/insertroom" exact component={Topbar}></Route>
@@ -199,6 +207,10 @@ function App() {
                   <Route path="/viewfood" exact component={ManageFoods}></Route>
                   <Route path="/food" exact component={Food}></Route>
                   <Route path="/food/update/:id" exact component={UpdateFood}></Route>
+                  <Route path="/searchfood" exact component={SearchFood}></Route>
+                  <Route path="/orderfood" exact component={withRouter(OrderFood)}></Route>
+                  <Route path="/payfood/:email" exact component={PaymentOrder}></Route>
+                  <Route path="/orderreport" exact component={OrderReport}></Route>
                   
 
                   {/*Lankani */}
@@ -219,7 +231,7 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <Route path="/" exact component={WelcomePage}></Route>
+          <Route path="/" exact component={Welcomepage}></Route>
 
           {/* Footer */}
           {/* <Footer/> */}
