@@ -97,7 +97,13 @@ export default class AllCustomers extends Component {
                     <td>{customers.email}</td>
                     <td>{customers.mobile}</td>
                     <td>{customers.nation}</td>
-                    
+                    <td>
+                      <a href={`/UpdateCustomer/${customers._id}`}>
+                        <button type="button" className="btn btn-success">
+                          <i className="fas fa-edit"></i> Update
+                        </button>
+                      </a>
+                    </td>
                     <td>
                       <button
                         type="button"

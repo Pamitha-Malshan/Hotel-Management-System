@@ -68,7 +68,7 @@ function NationPiechart() {
             type="pie"
             width={550}
             height={550}
-            series={[3,2]}
+            series={[4,2]}
             options={{
               noData: { text: "Empty Data" },
               labels: ["Srilankan", "Foriegn"],

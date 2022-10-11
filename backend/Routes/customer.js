@@ -75,24 +75,21 @@ router.get('/AllCustomers', (req,res) =>{
     });
   });*/
   
-  router.get("/get/:id", (req,res) =>{
-
+  router.get("/AllCustomers/:id",(req,res) =>{
     let postId = req.params.id;
 
-    Customer.findById(postId,(err,post) =>{
-
+    Customer.findById(postId,(err,post)=>{
         if(err){
             return res.status(400).json({success:false, err});
         }
-
         return res.status(200).json({
             success:true,
-            existingCustomer:post
+            post
         });
     });
 });
 
-/*router.put('/update/:id',(req,res)=>{
+router.put('/UpdateCustomer/:id',(req,res)=>{
     Customer.findByIdAndUpdate(
         req.params.id,
         {
@@ -103,11 +100,12 @@ router.get('/AllCustomers', (req,res) =>{
                 return res.status(400).json({error:err});
             }
             return res.status(200).json({
-                success:"Update successfully"
+                success:"Update Successfully"
             });
         }
     );
-});*/
+});
+
 
 router.route("/deletecustomer/:id").delete(async (req, res) =>{
 

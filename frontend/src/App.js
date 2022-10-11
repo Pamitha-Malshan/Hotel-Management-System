@@ -38,6 +38,7 @@ import HomePage from "./Component/Ayeshi/HomePage";
 import WelcomePage from "./Component/Ayeshi/WelcomePage";
 import ViewPage from "./Component/Ayeshi/ViewPage";
 import NationPiechart from "./Component/Ayeshi/CustomersReport";
+import UpdateCustomer from "./Component/Ayeshi/UpdateCustomer";
 
 
 
@@ -78,6 +79,7 @@ function App() {
               {/*Ayeshi */}
               <Route path="/AllCustomers" exact component={Sidebar}></Route>
               <Route path="/NationPiechart" exact component={Sidebar}></Route>
+              <Route path="/UpdateCustomer/:id" exact component={Sidebar}></Route>
             
 
               {/*Akeel */}
@@ -128,6 +130,7 @@ function App() {
               <Route path="/AllCustomers" exact component={Topbar}></Route>
               <Route path="/ViewPage" exact component={Topbar}></Route>
               <Route path="/NationPiechart" exact component={Topbar}></Route>
+              <Route path="/UpdateCustomer/:id" exact component={Topbar}></Route>
 
               {/*Akeel */}
               <Route path="/insertfood" exact component={Topbar}></Route>
@@ -189,6 +192,7 @@ function App() {
                   <Route path="/HomePage" exact component={HomePage}></Route>
                   <Route path="/ViewPage" exact component={ViewPage}></Route>
                   <Route path="/NationPiechart" exact component={NationPiechart}></Route>
+                  <Route path="/UpdateCustomer/:id" exact component={UpdateCustomer}></Route>
 
                   {/*Akeel */}
                   <Route path="/insertfood" exact component={AddFood}></Route>
@@ -251,6 +255,7 @@ function App() {
           <Route path="/AllCustomers" exact component={Footer}></Route>
           <Route path="/ViewPage" exact component={Footer}></Route>
           <Route path="/NationPiechart" exact component={Footer}></Route>
+          <Route path="/UpdateCustomer/:id" exact component={Footer}></Route>
         
         </div>
       </div>
