@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Chart from "react-apexcharts";
-//import { SortOutlined } from "@material-ui/icons";
 
 function NationPiechart() {
   const [nation, setnation] = useState([]);
@@ -57,52 +56,7 @@ function NationPiechart() {
   }, []);
 
   console.log(customers);
-
- 
-  // function count (){
-  // useEffect(() => {
-    //  const srole = ["Cheff", "Waiter", "Waitress"];
-    //   const sage = [  ];
-    
-    // let ctotal = 0;
-    // let wtotal = 0;
-    // let wstotal = 0;
-    
-    // for (let i = 0; i < employee.length; i++) {
-    //   switch (employee[i].role) {
-    //     case "cheff":
-    //       ctotal = ctotal + 1;
-    //       break;
-    
-    //     case "waiter":
-    //       wtotal = wtotal + 1;
-    //       break;
-    
-    //     case "waitress":
-    //       wstotal = wstotal + 1;
-    //       break;
-    
-    //     default:
-    //       break;
-    //   }
-    
-    //   // console.log(employee[i].role);
-    //   // srole.push(employee[i].role);
-    //   // sage.push(parseInt(employee[i].age));
-    // }
-    // setrole(srole);
-    // setStudentMarks(sage);
-    
-    // sage.push(ctotal);
-    // sage.push(wtotal);
-    // sage.push(wstotal);
-    
-    // console.log(ctotal);
-    // console.log(wtotal);
-  // }, []);
-  // }
-
-   console.log(nation);
+  console.log(nation);
 
   return (
     <React.Fragment>
@@ -114,10 +68,10 @@ function NationPiechart() {
             type="pie"
             width={550}
             height={550}
-            series={nation}
+            series={[3,2]}
             options={{
               noData: { text: "Empty Data" },
-              labels: nation,
+              labels: ["Srilankan", "Foriegn"],
             }}
           ></Chart>
         </div>
