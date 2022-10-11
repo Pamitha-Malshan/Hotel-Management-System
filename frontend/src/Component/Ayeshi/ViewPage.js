@@ -35,7 +35,7 @@ function Viewpage(){
         </div>
 
         <div class="card">
-          <a href="#">
+          <a href="searchfood">
             <img
               src={require("./images/food1.jpg")}
               class="card-img-top"
