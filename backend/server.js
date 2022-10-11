@@ -13,6 +13,7 @@ const PaymentRouter = require('./Routes/PaymentRoute');
 const EmailRouter = require('./Routes/EmailRoute');
 const FoodRouter= require("./Routes/foodRoute")
 const OrderFood = require('./Routes/OrderFoodRoute');
+const PayFoodRouter = require('./Routes/payFoodRoute');
 const customer = require('./Routes/customer');
 
 
@@ -35,6 +36,7 @@ app.use(EmailRouter);
 
 app.use(FoodRouter);
 app.use(OrderFood);
+app.use(PayFoodRouter)
 
 app.use(customer);
 

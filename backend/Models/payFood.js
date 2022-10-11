@@ -1,17 +1,19 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-const OrderFoodSchema = new mongoose.Schema({
-  foodName: {
+const payFoodSchema = new mongoose.Schema({
+  email: {
     type: String,
     required: true,
-    trim: true,
+    validate: (value) => {
+      if (!validator.isEmail(value)) {
+        throw new Error("Invalid email");
+      }
+    },
   },
-  quantity: {
+  bookingId: {
     type: String,
     required: true,
-    defauult: 1,
-    trim: true,
   },
   firstName: {
     type: String,
@@ -23,35 +25,32 @@ const OrderFoodSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  email: {
-    type: String,
-    required: true,
-    validate: (value) => {
-      if (!validator.isEmail(value)) {
-        throw new Error("Invalid email");
-      }
-    },
-  },
-  phoneNumber: {
-    type: String,
-    required: true,
-    validate: (number) => {
-      if (!validator.isMobilePhone(number, "si-LK")) {
-        throw new Error("Invalid Phone Number");
-      }
-    },
-  },
-  
-  address: {
+  cardNumber: {
     type: String,
     required: true,
     trim: true,
   },
-  
+  cardType: {
+    type: String,
+    required: true,
+  },
+  cardExpireDate: {
+    type: Date,
+    required: true,
+  },
+  cvv: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   total: {
     type: String,
     required: true,
   },
+  date: {
+    type: Date,
+    default: new Date()
+  }
 });
 
-module.exports = mongoose.model("OrderFood", OrderFoodSchema);
+module.exports = mongoose.model("payFood", payFoodSchema);

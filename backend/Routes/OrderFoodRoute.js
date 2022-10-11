@@ -3,7 +3,7 @@ const FoodOrder = require("../Models/OrderFood.js");
 const router = express.Router();
 
 //----------Insert Order Details into database
-router.post("/Order", (req, res) => {
+router.post("/order", (req, res) => {
   let newFoodOrder = new FoodOrder(req.body);
 
   newFoodOrder.save((err) => {
@@ -19,7 +19,7 @@ router.post("/Order", (req, res) => {
 });
 
 //----------get Ordered Food Details using email
-router.get("/OrderFood/:email", (req, res) => {
+router.get("/orderFoods/:email", (req, res) => {
   let email = req.params.email;
   console.log(email);
   FoodOrder.findOne({ email: email }).exec((err, food) => {
@@ -30,13 +30,13 @@ router.get("/OrderFood/:email", (req, res) => {
     }
     return res.status(200).json({
       success: true,
-      existingFood: food,
+      existingFoods: food,
     });
   });
 });
 
 //-------------get all Orderd Food
-router.get("/OrderFood", (req, res) => {
+router.get("/OrderFoods", (req, res) => {
   FoodOrder.find().exec((err, food) => {
     if (err) {
       return res.status(400).json({
