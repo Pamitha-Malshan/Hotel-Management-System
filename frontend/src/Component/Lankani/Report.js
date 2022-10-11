@@ -24,7 +24,7 @@ export default function Report() {
         </div>
 
         <div class="card">
-          <a href="#">
+          <a href="/orderreport">
             <img
               src={require("./images/food.jpg")}
               class="card-img-top"

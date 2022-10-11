@@ -1,134 +1,220 @@
-#update-form , #reservation-form {
-    width: 200%;
+#update-form  {
+  width: 200%;
+}
+
+#reservation-form {
+
+margin-top: 5%;
+margin-left: 10%;
+
 }
 
 .container-div {
-  width: 70%;
-  padding-left: 20%;
+
+padding-left: 20%;
 }
 
 .container-update {
-  width: 50%;
-  padding-right: 30%;
-  text-align: left;
+width: 50%;
+padding-right: 30%;
+text-align: left;
+}
+
+.container-reservation {
+width: 50%;
+padding-left: -15%;
+
+}
+
+#form {
+  padding-bottom: 60px;
+  
+}
+
+#update-form {
+  padding-bottom: 70px;
+}
+
+#star{
+  color: red;
+}
+
+.container-payment{
+  width: 75%;
+  
+  
+}
+
+#reserve-btn{
+  width: 200px;
+  height: 60px;
+  
+}
+
+#pay-form {
+  margin-right: 75px;
+  margin-left: 75px;
+  padding-bottom: 60px;
+  
+  
+}
+
+#pay-form-container {
+  padding-top: 30px;
+  
+  
+  
+  
+  
+}
+
+.pay-btn {
+  float: right;
+  margin-right: 70px;
+  width: 175px;
+  height: 45px;
+  
 }
 
 
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .card-group {
-    width: 90%;
-    height: 90%;
-    margin-left: 7%;
-    margin-top: 1%;
-    margin-bottom: 18%;
+  width: 90%;
+  height: 90%;
+  margin-left: 7%;
+  margin-top: 1%;
+  margin-bottom: 18%;
 }
 
+
+
 .error{
-    color: red;
+  color: red;
+  /* text-align: right; */
 }
 
 #search-room {
-    width: 35%;
-    height: 35%;
+  width: 35%;
+  height: 35%;
 }
 
 #p_wrap {
-    white-space: pre-line;
+  white-space: pre-line;
 }
 
 a {
-    color: rgb(87, 124, 191);
-    
+  color: rgb(87, 124, 191);
+  
 }
 
 p{
-    color: black;
+  color: black;
 }
 
 .badge {
-    width: 100px;
-    height: 35px;
+  width: 100px;
+  height: 35px;
 }
 
-.list-group {
-    width: 150%;
-    margin-left: -15%;
+#list-group {
+  width: 150%;
+  margin-left: -15%;
 }
 
 #list {
-    margin-bottom: 4%;
+  margin-bottom: 4%;
 }
 
 h2 {
-    color: black;
-    font-weight: bolder;
+  color: black;
+  font-weight: bolder;
 }
 
+#book-button{
+  float: right;
+  /* margin-left: 200%; */
+  margin-right: -90%;
+}
+
+
+
 #reserve-button {
-    text-align: center;
-    
+  text-align: center;
+  
 }
 
 .main {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 5px;
+  
+}
+.wrapper {
+  margin-top: 15%;
+  
+}
 
-  .image {
-    height: 400px;
-    width: 750px;
-    font-size: 25px;
-    /* background: lightgreen; */
-    margin: 10px;
-    display: inline-block;
-    line-height: 100px; 
-  }
+.image {
+  height: 400px;
+  width: 100%;
+  font-size: 25px;
+  /* background: lightgreen; */
+  margin: 10px;
+  display: inline-block;
+  line-height: 100px; 
+}
+.imageSearch {
+  height: 300px;
+  width: 75%;
+  font-size: 25px;
+  /* background: lightgreen; */
+  margin: 10px;
+  display: inline-block;
+  line-height: 100px; 
+}
 
-  .image-container {
-    vertical-align: middle;
-    display: inline-block;
-    width: 60%;
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+.image-container {
+  vertical-align: middle;
+  display: inline-block;
+  width: 40%;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  
+  
+}
 
-  .prev, .next {
-    padding-top: 5px;
-    padding-bottom: 10px;
-    height: 10%;
-    margin: 0 auto;
-    cursor: pointer;
-    color: black;
-    transition: 0.6s ease;
-  }
-  .next {
-    margin-left: 5px;
-  }
-  .prev {
-    margin-right: 5px;
-  }
-  .prev:hover, .next:hover {
-    color: white;
-    height: 5%;
-    background-color: rgba(0,0,0,0.8);
-  }
+.prev, .next {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  height: 10%;
+  margin: 0 auto;
+  cursor: pointer;
+  color: black;
+  transition: 0.6s ease;
+}
+.next {
+  margin-left: 5px;
+}
+.prev {
+  margin-right: 5px;
+}
+.prev:hover, .next:hover {
+  color: white;
+  height: 5%;
+  background-color: rgba(0,0,0,0.8);
+}
 
-  .form-outline {
-    margin-left: 40%;
-  }
+.form-outline {
+  margin-left: 40%;
+}
 
-  #star {
-    color: red;
-  }
-  .card-img-top{
-    height: 550px;
-    width:750px;
-  }
+.mySlides {display:none;}
