@@ -35,7 +35,7 @@ import CustomerSignup from "./Component/Ayeshi/CustomerSignup";
 import CustomerSignin from "./Component/Ayeshi/CustomerSignin";
 import AllCustomers from "./Component/Ayeshi/AllCustomers";
 import HomePage from "./Component/Ayeshi/HomePage";
-import WelcomePage from "./Component/Ayeshi/WelcomePage";
+import Welcomepage from "./Component/Ayeshi/WelcomePage";
 import ViewPage from "./Component/Ayeshi/ViewPage";
 import NationPiechart from "./Component/Ayeshi/CustomersReport";
 
@@ -215,7 +215,7 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <Route path="/" exact component={WelcomePage}></Route>
+          <Route path="/" exact component={Welcomepage}></Route>
 
           {/* Footer */}
           {/* <Footer/> */}
