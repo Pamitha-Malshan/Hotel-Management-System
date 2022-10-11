@@ -144,12 +144,12 @@ export default function Payment(props) {
 
     await axios
       .post("http://localhost:8001/payment", newPayment)
-      .then(() => {
+      .then(async () => {
         console.log(newPayment);
         alert("Payment Completed Successfully");
 
         //-------------send email of success payment
-        axios
+        await axios
           .post("http://localhost:8001/email", payemail)
           .then((response) => setMsg(response.data.respMesg));
 

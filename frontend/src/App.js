@@ -49,6 +49,7 @@ import UpdateCustomer from "./Component/Ayeshi/UpdateCustomer";
 function App() {
   return (
     <BrowserRouter>
+    
       <div>
         <div className="row">
           <Route path="/Validate" exact component={Validate}></Route>
@@ -231,7 +232,7 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <Route path="/" exact component={Welcomepage}></Route>
+          {/* <Route path="/" exact component={Welcomepage}></Route> */}
 
           {/* Footer */}
           {/* <Footer/> */}
@@ -271,6 +272,7 @@ function App() {
         
         </div>
       </div>
+      <Route path="/" exact component={Welcomepage}></Route>
     </BrowserRouter>
   );
 }
