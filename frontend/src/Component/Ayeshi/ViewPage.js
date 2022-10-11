@@ -20,7 +20,7 @@ function Viewpage(){
         <div class="card" style={{
             width:"5%"
         }}>
-          <a href="#">
+          <a href="/search">
             <img
               src={require("./images/room1.jpg")}
               class="card-img-top"
