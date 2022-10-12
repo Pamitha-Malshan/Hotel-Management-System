@@ -1,6 +1,6 @@
 # Hotel-Management-System
 
-Learder - A.A.Akeel    IT20129958
+Leader - A.A.Akeel    IT20129958
 
 Member 1 - M.A.P.M.Perera  IT20127800
 
