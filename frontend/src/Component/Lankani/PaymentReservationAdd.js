@@ -31,7 +31,7 @@ export default function Payment(props) {
     getBookedRooms(semail);
 
     //-------------validate the payment form
-    const createRoomForm = $("#pay-form");
+    const createRoomForm = $("#payform");
 
     createRoomForm.validate({
       rules: {
@@ -172,15 +172,15 @@ export default function Payment(props) {
         className="container-payment"
         style={{
           backgroundImage: `url(${payBackground})`,
-          height: "800px",
+          height: "900px",
           width: "95%",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div id="pay-form-container">
+        <div id="payform-container">
           <h1 style={{color: 'white'}}>Payment</h1>
-          <form id="pay-form" onSubmit={buyNow}>
+          <form id="payform" onSubmit={buyNow}>
             <div>
               <p
                 class="mb-3 mt-2"

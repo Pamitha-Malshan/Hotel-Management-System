@@ -67,7 +67,7 @@ function Sidebar() {
                 <span class="material-icons-sharp">add</span>
                 <h3>Add Product</h3>
             </a>
-            <a href="/hotelgreen">
+            <a href="/">
                 <span class="material-icons-sharp">logout</span>
                 <h3>Logout</h3>
             </a>

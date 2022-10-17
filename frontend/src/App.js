@@ -20,7 +20,7 @@ import ManageRooms from "./Component/Lankani/GetRooms";
 import UpdateRoom from "./Component/Lankani/UpdateRoom";
 import RoomReservation from "./Component/Lankani/RoomReservation";
 import SearchRoom from "./Component/Lankani/SearchRoom";
-import Payment from "./Component/Lankani/PaymentAdd";
+import Payment from "./Component/Lankani/PaymentReservationAdd";
 // import MonthlyIncomReport from "./Component/Lankani/MonthlyReservationIncom";
 // import GetIncomeData from "./Component/Lankani/IncomeData";
 import PaymentIncome from "./Component/Lankani/PayIncome";
@@ -154,7 +154,7 @@ function App() {
               <Route path="/room/update/:id" exact component={Topbar}></Route>
               <Route path="/roomreservation" exact component={withRouter(Topbar)}></Route>
               <Route path="/search" exact component={Topbar}></Route>
-              <Route path="/pay/:email" exact component={Topbar}></Route>
+              <Route path="/payroom/:email" exact component={Topbar}></Route>
               {/* <Route path="/income" exact component={Topbar}></Route> */}
               <Route path="/paymentincome" exact component={Topbar}></Route>
               <Route path="/report" exact component={Topbar}></Route>
@@ -222,7 +222,7 @@ function App() {
                   <Route path="/room/update/:id" exact component={UpdateRoom}></Route>
                   <Route path="/search" exact component={SearchRoom}></Route>
                   <Route path="/roomreservation" exact component={withRouter(RoomReservation)}></Route>
-                  <Route path="/pay/:email" exact component={Payment}></Route>
+                  <Route path="/payroom/:email" exact component={Payment}></Route>
                   {/* <Route path="/income" exact component={GetIncomeData}></Route> */}
                   <Route path="/paymentincome" exact component={PaymentIncome}></Route>
                   <Route path="/report" exact component={Report}></Route>
@@ -258,7 +258,7 @@ function App() {
           <Route path="/room/update/:id" exact component={Footer}></Route>
           <Route path="/search" exact component={Footer}></Route>
           <Route path="/roomreservation" exact component={withRouter(Footer)}></Route>
-          <Route path="/pay/:email" exact component={Footer}></Route>
+          <Route path="/payroom/:email" exact component={Footer}></Route>
           {/* <Route path="/income" exact component={Footer}></Route> */}
           <Route path="/paymentincome" exact component={Footer}></Route>
           <Route path="/report" exact component={Footer}></Route>

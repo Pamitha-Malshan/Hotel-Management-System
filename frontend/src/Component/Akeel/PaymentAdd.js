@@ -169,7 +169,7 @@ export default function Payment(props) {
   return (
     <div>
       <div
-        className="container-payment"
+        className="container-pay"
         style={{
           backgroundImage: `url(${payBackground})`,
           height: "800px",

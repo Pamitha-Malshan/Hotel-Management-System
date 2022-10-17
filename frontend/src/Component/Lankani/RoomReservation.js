@@ -28,7 +28,7 @@ export default function RoomReservation(props) {
 
   useEffect(() => {
     //--------validate the room reservation form
-    const reserveRoomForm = $("#reservation-form");
+    const reserveRoomForm = $("#reserve-form");
 
     reserveRoomForm.validate({
       rules: {
@@ -124,7 +124,7 @@ export default function RoomReservation(props) {
   //-------function of clear the form field
   const clearForm = (e) => {
     e.preventDefault();
-    $("#reservation-form").trigger("reset");
+    $("#reserve-form").trigger("reset");
   };
 
   //---------send reservation form data to backend
@@ -145,6 +145,8 @@ export default function RoomReservation(props) {
       city,
       total: totalAmount(),
     };
+
+   
 
     axios
       .post("http://localhost:8001/booking", newReservation)
@@ -169,19 +171,19 @@ export default function RoomReservation(props) {
       </div>
       <div class="row">
         <div
-          className="container-reservation"
+          className="container-reserve"
           style={{
             backgroundImage: `url(${background})`,
             height: "auto",
             width: "1190px",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            marginLeft: "7%",
+            marginLeft: "-7%",
             marginTop: "-5%",
             paddingBottom: "2%",
           }}
         >
-          <form encType="multipart/form-data" id="reservation-form" style={{
+          <form encType="multipart/form-data" id="reserve-form" style={{
             width: '80%',
           }}>
             <div className="mb-3">
@@ -383,7 +385,7 @@ export default function RoomReservation(props) {
                   id="reserve-btn"
                   onClick={handleSubmit}
                   to={{
-                    pathname: `/pay/${email}`,
+                    pathname: `/payroom/${email}`,
                   }}
                   className="btn btn-outline-primary"
                   type="submit"
