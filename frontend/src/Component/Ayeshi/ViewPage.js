@@ -8,7 +8,7 @@ function Viewpage(){
              
               <h1>It's Time For Adventures & experiences
                 <br/>
-              <a href='/HomePage'>
+              <a href='/'>
               <button
                         type="button"
                         className="btn btn-warning"
